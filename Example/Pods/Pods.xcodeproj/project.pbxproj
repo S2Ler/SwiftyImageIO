@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E22BD0DA1594B8A1C76F68F7CD5BD1B /* SwiftyImageIO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD73F96A601934D0C432135BFE6907D /* SwiftyImageIO-dummy.m */; };
+		6E11AE45BFA6B2D2DECC7EE76A02B9FB /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51705E6A3CEF2FFB97F32447535C1754 /* ImageSource.swift */; };
 		6E40996A99656E6AE04954459DC584D8 /* Pods-SwiftyImageIO_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A62981B6E8A5D514FC6C961B1DD488 /* Pods-SwiftyImageIO_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75C6DD120A79D248D848ECFF3E5DE269 /* Pods-SwiftyImageIO_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9075AFD1D94DE0DA4D0C8111380206E8 /* Pods-SwiftyImageIO_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75D7D75CDDC762B705EBDA18313A99AD /* SwiftyImageIO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD73F96A601934D0C432135BFE6907D /* SwiftyImageIO-dummy.m */; };
 		8A6661A8255DB279EC999157BD446B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 		8FD0F3C8373746353572E1B3213827FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 		97E15601741C051098562429C6030B1C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283F14E70F91E38ADE8A38BB4544BEE /* ImageIO.framework */; };
 		A4781D83D35F6BA17C55906FEC2D1350 /* Pods-SwiftyImageIO_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3315930C80E3D0109C1CE0B14B7182E /* Pods-SwiftyImageIO_Example-dummy.m */; };
+		AD8B37388AA7799E602F1D77B481F8AB /* ImageDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D128D8DEB792AA74E66A16AB4A7D4BBE /* ImageDestination.swift */; };
 		BE9663004A6AB8F8D5DFF2B35160D262 /* SwiftyImageIO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E6B76A6829DE282D0B86D5F67CD9A5 /* SwiftyImageIO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D67188F7A5167AC003A5A332F89AFD1F /* Pods-SwiftyImageIO_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C81A37ADB51FAF2CA39E80F98023E72 /* Pods-SwiftyImageIO_Tests-dummy.m */; };
-		F77D8409918137B9E15AEBB71ACF9D6D /* SwiftyImageIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660DEBAEAB1DF678BDC7412C7D48FE57 /* SwiftyImageIO.swift */; };
 		FB7243488FCD61105A9F770C60B9DD2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,10 +53,10 @@
 		3D46114C15D5E778371070128C427D43 /* SwiftyImageIO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyImageIO.modulemap; sourceTree = "<group>"; };
 		45196F25A79E399CE9BF4BFACA40310C /* Pods-SwiftyImageIO_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyImageIO_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		487C4ACFBF7F2B150E74A52DD88CB5E5 /* Pods-SwiftyImageIO_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		51705E6A3CEF2FFB97F32447535C1754 /* ImageSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
 		5308D304389A9FB9AF8F630CEEA2C8B4 /* SwiftyImageIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyImageIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFE4C0F9FF679BEB040DC7618DD5C88 /* Pods-SwiftyImageIO_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Example.release.xcconfig"; sourceTree = "<group>"; };
 		657A16AF280E481EEBCAF8B4409C24B9 /* SwiftyImageIO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyImageIO.xcconfig; sourceTree = "<group>"; };
-		660DEBAEAB1DF678BDC7412C7D48FE57 /* SwiftyImageIO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyImageIO.swift; sourceTree = "<group>"; };
 		703AAA8ED3CB9BD537E092D09E72303C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9075AFD1D94DE0DA4D0C8111380206E8 /* Pods-SwiftyImageIO_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyImageIO_Tests-umbrella.h"; sourceTree = "<group>"; };
 		921EEF28D7311F789C712591AA24FD2A /* Pods-SwiftyImageIO_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyImageIO_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		C0B8E4AF09CDEF46342193F696913688 /* Pods_SwiftyImageIO_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyImageIO_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C283F14E70F91E38ADE8A38BB4544BEE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		C74FD80E26AB8F7736917DEB73A12438 /* Pods_SwiftyImageIO_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyImageIO_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D128D8DEB792AA74E66A16AB4A7D4BBE /* ImageDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageDestination.swift; sourceTree = "<group>"; };
 		D2104ECFEB00C801CA6104E7E6F5CC7E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3315930C80E3D0109C1CE0B14B7182E /* Pods-SwiftyImageIO_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyImageIO_Example-dummy.m"; sourceTree = "<group>"; };
 		F2B13FC616AD2F1AE08337FC8F29D7EA /* Pods-SwiftyImageIO_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyImageIO_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -102,10 +104,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11AD4FF98F65EAE276415BF500BEBA1B /* Classes */ = {
+		002419666A216030F72AF0545520A45F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				660DEBAEAB1DF678BDC7412C7D48FE57 /* SwiftyImageIO.swift */,
+				D128D8DEB792AA74E66A16AB4A7D4BBE /* ImageDestination.swift */,
+				51705E6A3CEF2FFB97F32447535C1754 /* ImageSource.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -136,10 +139,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		61B8918FA30FC5083B9BFC779C1A71B1 /* Pod */ = {
+		5857237DBE7B6AE41841F33C03FA1A84 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				11AD4FF98F65EAE276415BF500BEBA1B /* Classes */,
+				002419666A216030F72AF0545520A45F /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -190,7 +193,7 @@
 		82B2E0E82DFCA855232A2B6FC1AAEA23 /* SwiftyImageIO */ = {
 			isa = PBXGroup;
 			children = (
-				61B8918FA30FC5083B9BFC779C1A71B1 /* Pod */,
+				5857237DBE7B6AE41841F33C03FA1A84 /* Pod */,
 				7D7C55786C82281AE0FA6622E5175324 /* Support Files */,
 			);
 			name = SwiftyImageIO;
@@ -285,7 +288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBCEA751E00D79E15C8F15A24295848C /* Build configuration list for PBXNativeTarget "SwiftyImageIO" */;
 			buildPhases = (
-				76C9BFA539CB6AB06CED75F67D3AD093 /* Sources */,
+				695CCA615AABFB97599383523C00F615 /* Sources */,
 				1CECAE832436A7889284DAF92BFB54E7 /* Frameworks */,
 				BF62139699955721737DA1DAD9B72F02 /* Headers */,
 			);
@@ -353,12 +356,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76C9BFA539CB6AB06CED75F67D3AD093 /* Sources */ = {
+		695CCA615AABFB97599383523C00F615 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F77D8409918137B9E15AEBB71ACF9D6D /* SwiftyImageIO.swift in Sources */,
-				75D7D75CDDC762B705EBDA18313A99AD /* SwiftyImageIO-dummy.m in Sources */,
+				AD8B37388AA7799E602F1D77B481F8AB /* ImageDestination.swift in Sources */,
+				6E11AE45BFA6B2D2DECC7EE76A02B9FB /* ImageSource.swift in Sources */,
+				1E22BD0DA1594B8A1C76F68F7CD5BD1B /* SwiftyImageIO-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

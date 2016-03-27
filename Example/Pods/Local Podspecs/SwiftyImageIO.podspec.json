@@ -9,7 +9,7 @@
     "Alexander Belyavskiy": "diejmon@gmail.com"
   },
   "source": {
-    "git": "git@github.com:diejmon/SwiftyImageIO.git",
+    "git": "https://github.com/diejmon/SwiftyImageIO.git",
     "tag": "0.1.0"
   },
   "platforms": {

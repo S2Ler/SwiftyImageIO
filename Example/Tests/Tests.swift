@@ -14,21 +14,58 @@ class Tests: XCTestCase {
     super.tearDown()
   }
   
-  func testSupportedIdentifiers() {
-    let identifiers = ImageIO.supportedUTIs()
+  func testSourceSupportedIdentifiers() {
+    let identifiers = ImageSource.supportedUTIs()
     
     XCTAssert(identifiers.contains("public.png"), "")
     
     for identifier in identifiers {
-      XCTAssertTrue(ImageIO.supportsUTI(identifier))
+      XCTAssertTrue(ImageSource.supportsUTI(identifier))
     }
   }
   
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measureBlock() {
-      // Put the code you want to measure the time of here.
+  func testDestinationSupportedIdentifiers() {
+    let identifiers = ImageDestination.supportedUTIs()
+    
+    XCTAssert(identifiers.contains("public.png"), "")
+    
+    for identifier in identifiers {
+      XCTAssertTrue(ImageDestination.supportsUTI(identifier))
     }
   }
+
+  func testGifImageSource() {
+    let imageSource = ImageSource(url: gifImageURL, options: nil)!
+    XCTAssert(imageSource.imageCount == 120)
+    XCTAssert(imageSource.status == .StatusComplete)
+    for imageIndex in (0..<imageSource.imageCount) {
+      XCTAssertNotNil(imageSource.createImage(atIndex: imageIndex, options: nil))
+    }
+    XCTAssert(imageSource.UTI! == "com.compuserve.gif")
+  }
   
+  func testPngImageSource() {
+    let imageSource = ImageSource(url: pngImageURL, options: [.TypeIdentifierHint(UTI: "public.png")])!
+    XCTAssert(imageSource.imageCount == 1)
+    XCTAssert(imageSource.status == .StatusComplete)
+    XCTAssertNotNil(imageSource.createImage())
+    XCTAssert(imageSource.UTI! == "public.png")
+  }
+}
+
+extension Tests {
+  private var pngImageURL: NSURL {
+    let bundle = NSBundle(forClass: self.dynamicType)
+    return bundle.URLForResource("sample", withExtension: "png")!
+  }
+  
+  private var gifImageURL: NSURL {
+    let bundle = NSBundle(forClass: self.dynamicType)
+    return bundle.URLForResource("gifSample", withExtension: "gif")!
+  }
+  
+  private var jpgImageURL: NSURL {
+    let bundle = NSBundle(forClass: self.dynamicType)
+    return bundle.URLForResource("cameraSample", withExtension: "jpg")!
+  }
 }

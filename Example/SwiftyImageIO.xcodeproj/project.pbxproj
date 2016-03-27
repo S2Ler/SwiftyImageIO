@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B3513D1CA8419E00B1A19A /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B3513C1CA8419E00B1A19A /* sample.png */; };
+		09B3513F1CA84DC700B1A19A /* gifSample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 09B3513E1CA84DC700B1A19A /* gifSample.gif */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		06CCE90BA9094A2CA52C520B /* Pods-SwiftyImageIO_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example.release.xcconfig"; sourceTree = "<group>"; };
+		09B3513C1CA8419E00B1A19A /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		09B3513E1CA84DC700B1A19A /* gifSample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifSample.gif; sourceTree = "<group>"; };
 		211798F6E539096DCDC6C79E /* Pods-SwiftyImageIO_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C6B8F4B678EC938F404E656 /* Pods-SwiftyImageIO_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftyImageIO_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyImageIO_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				09B3513C1CA8419E00B1A19A /* sample.png */,
+				09B3513E1CA84DC700B1A19A /* gifSample.gif */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -256,6 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B3513D1CA8419E00B1A19A /* sample.png in Resources */,
+				09B3513F1CA84DC700B1A19A /* gifSample.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +500,7 @@
 				INFOPLIST_FILE = SwiftyImageIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipdrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -505,7 +513,7 @@
 				INFOPLIST_FILE = SwiftyImageIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipdrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
