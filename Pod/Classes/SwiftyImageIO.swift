@@ -5,7 +5,7 @@ public final class ImageIO {
   public typealias UnifersalTypeIdentifier = String
   
   public static func supportedUTIs() -> [UnifersalTypeIdentifier] {
-    let identifiers = CGImageSourceCopyTypeIdentifiers() as! [AnyObject] as! [UnifersalTypeIdentifier]
+    let identifiers = CGImageSourceCopyTypeIdentifiers() as [AnyObject] as! [UnifersalTypeIdentifier]
     return identifiers
   }
   
