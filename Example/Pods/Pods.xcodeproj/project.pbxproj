@@ -16,7 +16,7 @@
 		A4781D83D35F6BA17C55906FEC2D1350 /* Pods-SwiftyImageIO_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3315930C80E3D0109C1CE0B14B7182E /* Pods-SwiftyImageIO_Example-dummy.m */; };
 		BE9663004A6AB8F8D5DFF2B35160D262 /* SwiftyImageIO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E6B76A6829DE282D0B86D5F67CD9A5 /* SwiftyImageIO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D67188F7A5167AC003A5A332F89AFD1F /* Pods-SwiftyImageIO_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C81A37ADB51FAF2CA39E80F98023E72 /* Pods-SwiftyImageIO_Tests-dummy.m */; };
-		F77D8409918137B9E15AEBB71ACF9D6D /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660DEBAEAB1DF678BDC7412C7D48FE57 /* ReplaceMe.swift */; };
+		F77D8409918137B9E15AEBB71ACF9D6D /* SwiftyImageIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660DEBAEAB1DF678BDC7412C7D48FE57 /* SwiftyImageIO.swift */; };
 		FB7243488FCD61105A9F770C60B9DD2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		5308D304389A9FB9AF8F630CEEA2C8B4 /* SwiftyImageIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyImageIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFE4C0F9FF679BEB040DC7618DD5C88 /* Pods-SwiftyImageIO_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Example.release.xcconfig"; sourceTree = "<group>"; };
 		657A16AF280E481EEBCAF8B4409C24B9 /* SwiftyImageIO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyImageIO.xcconfig; sourceTree = "<group>"; };
-		660DEBAEAB1DF678BDC7412C7D48FE57 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		660DEBAEAB1DF678BDC7412C7D48FE57 /* SwiftyImageIO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyImageIO.swift; sourceTree = "<group>"; };
 		703AAA8ED3CB9BD537E092D09E72303C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9075AFD1D94DE0DA4D0C8111380206E8 /* Pods-SwiftyImageIO_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyImageIO_Tests-umbrella.h"; sourceTree = "<group>"; };
 		921EEF28D7311F789C712591AA24FD2A /* Pods-SwiftyImageIO_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyImageIO_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		11AD4FF98F65EAE276415BF500BEBA1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				660DEBAEAB1DF678BDC7412C7D48FE57 /* ReplaceMe.swift */,
+				660DEBAEAB1DF678BDC7412C7D48FE57 /* SwiftyImageIO.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -357,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F77D8409918137B9E15AEBB71ACF9D6D /* ReplaceMe.swift in Sources */,
+				F77D8409918137B9E15AEBB71ACF9D6D /* SwiftyImageIO.swift in Sources */,
 				75D7D75CDDC762B705EBDA18313A99AD /* SwiftyImageIO-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
