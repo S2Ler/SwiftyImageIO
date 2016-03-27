@@ -51,6 +51,16 @@ class Tests: XCTestCase {
     XCTAssertNotNil(imageSource.createImage())
     XCTAssert(imageSource.UTI! == "public.png")
   }
+  
+  func testImageDestination() {
+    let data = NSMutableData()
+    guard let destination = ImageDestination(data: data, UTI: "public.png", imageCount: 1)
+      else { XCTAssert(false); return }
+    destination.addImage(UIImage(contentsOfFile: pngImageURL.path!)!.CGImage!)
+    XCTAssertTrue(destination.finalize())
+    let image = UIImage(data: data)
+    XCTAssertNotNil(image)
+  }
 }
 
 extension Tests {
