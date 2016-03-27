@@ -1,5 +1,7 @@
 import ImageIO
 
+//TODO: Copy/Paste documentation from ImageIO
+
 public class ImageSource {
   let imageSource: CGImageSource
   
