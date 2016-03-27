@@ -1,6 +1,6 @@
 # SwiftyImageIO
 
-[![CI Status](http://img.shields.io/travis/Alexander Belyavskiy/SwiftyImageIO.svg?style=flat)](https://travis-ci.org/Alexander Belyavskiy/SwiftyImageIO)
+[![Build Status](https://travis-ci.org/diejmon/SwiftyImageIO.svg?branch=master)](https://travis-ci.org/diejmon/SwiftyImageIO)
 [![Version](https://img.shields.io/cocoapods/v/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![License](https://img.shields.io/cocoapods/l/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
