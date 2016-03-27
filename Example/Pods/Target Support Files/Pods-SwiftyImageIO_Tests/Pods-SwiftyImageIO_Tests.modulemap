@@ -1,0 +1,6 @@
+framework module Pods_SwiftyImageIO_Tests {
+  umbrella header "Pods-SwiftyImageIO_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

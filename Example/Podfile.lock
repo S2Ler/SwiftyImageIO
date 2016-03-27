@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyImageIO (0.1.0)
+
+DEPENDENCIES:
+  - SwiftyImageIO (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftyImageIO:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftyImageIO: 21198b2021c84e3eb0d4e9560c3b778d432f2536
+
+PODFILE CHECKSUM: 73d351b957e6d775a2ba152c7d0f3ff012828841
+
+COCOAPODS: 1.0.0.beta.6
