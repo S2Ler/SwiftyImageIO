@@ -20,10 +20,10 @@ Pod::Spec.new do |s|
   Provides an easy interface to ImageIO framework.
                        DESC
 
-  s.homepage         = "https://github.com/diejmon/SwiftyImageIO"  
+  s.homepage         = "https://github.com/diejmon/SwiftyImageIO"
   s.license          = 'MIT'
   s.author           = { "Alexander Belyavskiy" => "diejmon@gmail.com" }
-  s.source           = { :git => "git@github.com:diejmon/SwiftyImageIO.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/diejmon/SwiftyImageIO.git", :tag => s.version.to_s }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'Pod/Classes/**/*'
