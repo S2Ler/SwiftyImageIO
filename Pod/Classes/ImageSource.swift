@@ -32,6 +32,39 @@ public class ImageSource {
   }
 }
 
+public extension ImageSource.Options {
+  public var imageIOOption: (key: String, value: AnyObject) {
+    switch self {
+    case .TypeIdentifierHint(let UTI):
+      return (key: kCGImageSourceTypeIdentifierHint as String, value: UTI)
+    case .ShouldAllowFloat(let allow):
+      return (key: kCGImageSourceShouldAllowFloat as String, value: allow)
+    case .ShouldCache(let shouldCache):
+      return (key: kCGImageSourceShouldCache as String, value: shouldCache)
+    case .CreateThumbnailFromImageIfAbsent(let createThumbnail):
+      return (key: kCGImageSourceCreateThumbnailFromImageIfAbsent as String, value: createThumbnail)
+    case .CreateThumbnailFromImageAlways(let createThumbnail):
+      return (key: kCGImageSourceCreateThumbnailFromImageAlways as String, value: createThumbnail)
+    case .ThumbnailMaxPixelSize(let size):
+      return (key: kCGImageSourceThumbnailMaxPixelSize as String, value: size)
+    case .CreateThumbnailWithTransform(let createWithTransform):
+      return (key: kCGImageSourceCreateThumbnailWithTransform as String, value: createWithTransform)
+    }
+  }
+}
+
+public extension SequenceType where Generator.Element == ImageSource.Options {
+  func rawOptions() -> CFDictionary {
+    var dictionary: [String: AnyObject] = [:]
+    for option in self {
+      let (key, value) = option.imageIOOption
+      dictionary[key] = value
+    }
+    
+    return dictionary as CFDictionary
+  }
+}
+
 public final class IncrementalImageSource: ImageSource {
 }
 
@@ -104,39 +137,5 @@ public extension ImageSource {
     guard let rawProperties =  CGImageSourceCopyPropertiesAtIndex(imageSource, index, options?.rawOptions())
       else { return nil }
     return (rawProperties as NSDictionary) as? [String: AnyObject]
-  }
-}
-
-public extension ImageSource.Options {
-  public var imageIOOption: (key: String, value: AnyObject) {
-    switch self {
-    case .TypeIdentifierHint(let UTI):
-      return (key: kCGImageSourceTypeIdentifierHint as String, value: UTI)
-    case .ShouldAllowFloat(let allow):
-      return (key: kCGImageSourceShouldAllowFloat as String, value: allow)
-    case .ShouldCache(let shouldCache):
-      return (key: kCGImageSourceShouldCache as String, value: shouldCache)
-    case .CreateThumbnailFromImageIfAbsent(let createThumbnail):
-      return (key: kCGImageSourceCreateThumbnailFromImageIfAbsent as String, value: createThumbnail)
-    case .CreateThumbnailFromImageAlways(let createThumbnail):
-      return (key: kCGImageSourceCreateThumbnailFromImageAlways as String, value: createThumbnail)
-    case .ThumbnailMaxPixelSize(let size):
-      return (key: kCGImageSourceThumbnailMaxPixelSize as String, value: size)
-    case .CreateThumbnailWithTransform(let createWithTransform):
-      return (key: kCGImageSourceCreateThumbnailWithTransform as String, value: createWithTransform)
-    }
-  }
-}
-
-
-public extension SequenceType where Generator.Element == ImageSource.Options {
-  func rawOptions() -> CFDictionary {
-    var dictionary: [String: AnyObject] = [:]
-    for option in self {
-      let (key, value) = option.imageIOOption
-      dictionary[key] = value
-    }
-    
-    return dictionary as CFDictionary
   }
 }
