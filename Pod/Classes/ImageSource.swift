@@ -94,6 +94,24 @@ public extension ImageSource {
   }
 }
 
+// convenient
+public extension ImageSource {
+  /**
+   Creates a thumbnail image of the image located at first index in an image source with the maximum width and height in pixels of a thumbnail equal to `size`.
+   
+   CreateThumbnailFromImageAlways = true
+   
+   - parameter size: The maximum width and height in pixels of a thumbnail.
+   
+   - returns: CGImage object
+   */
+  public func createThumbnail(size: Int) -> CGImage? {
+    return createThumbnail(atIndex: 0,
+                           options: [.ThumbnailMaxPixelSize(size),
+                            .CreateThumbnailFromImageAlways(true)])
+  }
+}
+
 //MARK: - Updating an Image Source
 public extension IncrementalImageSource {
   public func update(data data: NSData, isFinal: Bool) {
