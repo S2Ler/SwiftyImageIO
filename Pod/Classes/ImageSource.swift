@@ -105,7 +105,7 @@ public extension ImageSource {
    
    - returns: CGImage object
    */
-  public func createThumbnail(size: Int) -> CGImage? {
+  public func createThumbnail(size size: Int) -> CGImage? {
     return createThumbnail(atIndex: 0,
                            options: [.ThumbnailMaxPixelSize(size),
                             .CreateThumbnailFromImageAlways(true)])
