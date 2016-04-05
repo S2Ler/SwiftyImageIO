@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 
+Swift wrapper around ImageIO framework.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
