@@ -8,3 +8,7 @@ Initial version
 * Remove `UIColor` dependency
 * Swift 3.0 support
 * OS X support
+
+## 0.1.2
+
+* Add documentation

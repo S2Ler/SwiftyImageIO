@@ -19,6 +19,7 @@ public class ImageSource {
    - parameter options: An array of `ImageSource.Options` that specifies additional creation options. See `ImageSource.Options` for the keys you can supply.
    
    - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
+   - seealso: `CGImageSourceCreateWithURL`
    */
   public init?(url: NSURL, options: [Options]?) {
     guard let imageSource = CGImageSourceCreateWithURL(url as CFURL, options?.rawOptions()) else { return nil }
@@ -32,6 +33,7 @@ public class ImageSource {
    - parameter options: An array of `ImageSource.Options` that specifies additional creation options. See `ImageSource.Options` for the keys you can supply.
    
    - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
+   - seealso: `CGImageSourceCreateWithData`
    */
   public init?(data: NSData, options: [Options]?) {
     guard let imageSource = CGImageSourceCreateWithData(data as CFData, options?.rawOptions()) else { return nil }
@@ -51,6 +53,17 @@ public class ImageSource {
   
   //TODO: CGImageSourceCreateWithDataProvider
   
+  /**
+   Available options which you can submit for various `ImageSource` functions
+   
+   - TypeIdentifierHint: The best guess of the uniform type identifier (UTI) for the format of the image source file. This key can be provided in the options dictionary when you create a `ImageSource` object.
+   - ShouldAllowFloat: Whether the image should be returned as a CGImage object that uses floating-point values, if supported by the file format. CGImage objects that use extended-range floating-point values may require additional processing to render in a pleasing manner. The default value is `true`.
+   - ShouldCache: Whether the image should be cached in a decoded form. The default value is `false` in 32-bit, `true` in 64-bit. This key can be provided in the options array that you can pass to the methods `propertiesForImage` and `properties`.
+   - CreateThumbnailFromImageIfAbsent: Whether a thumbnail should be automatically created for an image if a thumbnail isn't present in the image source file. The thumbnail is created from the full image, subject to the limit specified by `kCGImageSourceThumbnailMaxPixelSize`. If a maximum pixel size isn't specified, then the thumbnail is the size of the full image, which in most cases is not desirable. The default value is `false`. This key can be provided in the options array that you pass to the method `createThumbnail`.
+   - CreateThumbnailFromImageAlways: Whether a thumbnail should be created from the full image even if a thumbnail is present in the image source file. The thumbnail is created from the full image, subject to the limit specified by `kCGImageSourceThumbnailMaxPixelSize`. If a maximum pixel size isn't specified, then the thumbnail is the size of the full image, which probably isn't what you want. The default value is `false`. This key can be provided in the options array that you can pass to the method `createThumbnail`
+   - ThumbnailMaxPixelSize: The maximum width and height in pixels of a thumbnail. If this key is not specified, the width and height of a thumbnail is not limited and thumbnails may be as big as the image itself. This key can be provided in the options array that you pass to the method `createThumbnail`
+   - CreateThumbnailWithTransform: Whether the thumbnail should be rotated and scaled according to the orientation and pixel aspect ratio of the full image. The default value is `false`.
+   */
   public enum Options {
     case TypeIdentifierHint(UTI: String)
     case ShouldAllowFloat(Bool)
@@ -63,6 +76,7 @@ public class ImageSource {
 }
 
 public extension ImageSource.Options {
+  /// Converts ImageSource.Options to ImageIO key/value options
   public var imageIOOption: (key: String, value: AnyObject) {
     switch self {
     case .TypeIdentifierHint(let UTI):
@@ -85,6 +99,7 @@ public extension ImageSource.Options {
 
 #if swift(>=3.0)
   public extension Sequence where Iterator.Element == ImageSource.Options {
+    /// Converts array of ImageSource.Options to ImageIO dictionary of options
     func rawOptions() -> CFDictionary {
       var dictionary: [String: AnyObject] = [:]
       for option in self {
@@ -97,6 +112,7 @@ public extension ImageSource.Options {
   }
 #else
   public extension SequenceType where Generator.Element == ImageSource.Options {
+    /// Converts array of ImageSource.Options to ImageIO dictionary of options
     func rawOptions() -> CFDictionary {
       var dictionary: [String: AnyObject] = [:]
       for option in self {
