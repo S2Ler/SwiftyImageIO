@@ -7,3 +7,4 @@ Initial version
 * SPM support
 * Remove `UIColor` dependency
 * Swift 3.0 support
+* OS X support
