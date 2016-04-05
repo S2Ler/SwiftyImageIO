@@ -3,19 +3,48 @@ import ImageIO
 
 //TODO: Copy/Paste documentation from ImageIO
 
+/** ImageSource objects, available in OS X v10.4 or later and iOS 4.0 and later, abstract the data-reading task. An image source can read image data from a URL, a CFData object, or a data consumer.
+
+    After creating a ImageSource object for the appropriate source, you can obtain images, thumbnails, image properties, and other image information.
+    - seealso: [CGImageSource](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGImageSource/index.html)
+ */
 public class ImageSource {
+  /// Reference to CGImageSource object
   let imageSource: CGImageSource
   
+  /**
+   Creates an image source that reads from a location specified by a URL.
+   
+   - parameter url:     The URL to read from.
+   - parameter options: An array of `ImageSource.Options` that specifies additional creation options. See `ImageSource.Options` for the keys you can supply.
+   
+   - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
+   */
   public init?(url: NSURL, options: [Options]?) {
     guard let imageSource = CGImageSourceCreateWithURL(url as CFURL, options?.rawOptions()) else { return nil }
     self.imageSource = imageSource
   }
   
+  /**
+   Creates an image source that reads from a Foundation data object.
+   
+   - parameter data:    The data object to read from.
+   - parameter options: An array of `ImageSource.Options` that specifies additional creation options. See `ImageSource.Options` for the keys you can supply.
+   
+   - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
+   */
   public init?(data: NSData, options: [Options]?) {
     guard let imageSource = CGImageSourceCreateWithData(data as CFData, options?.rawOptions()) else { return nil }
     self.imageSource = imageSource
   }
   
+  /**
+   Creates an image source wrapper around `CGImageSource`
+   
+   - parameter imageSource: `CGImageSource` object to wrap around
+   
+   - returns: An `ImageSource` for `CGImageSource`
+   */
   public init(imageSource: CGImageSource) {
     self.imageSource = imageSource
   }
