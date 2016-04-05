@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SwiftyImageIO"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A swift wrapper around ImageIO framework"
 
 # This description is used to generate tags and improve search results.
@@ -26,6 +26,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/diejmon/SwiftyImageIO.git", :tag => s.version.to_s }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'Sources/**/*'
   s.frameworks = 'Foundation', 'ImageIO'
 end

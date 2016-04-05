@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E22BD0DA1594B8A1C76F68F7CD5BD1B /* SwiftyImageIO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD73F96A601934D0C432135BFE6907D /* SwiftyImageIO-dummy.m */; };
-		6E11AE45BFA6B2D2DECC7EE76A02B9FB /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51705E6A3CEF2FFB97F32447535C1754 /* ImageSource.swift */; };
+		1E22BD0DA1594B8A1C76F68F7CD5BD1B /* SwiftyImageIO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2205721C09E57592FD09442D85001999 /* SwiftyImageIO-dummy.m */; };
+		6E11AE45BFA6B2D2DECC7EE76A02B9FB /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE456BCC57F2559BB50A07FBE5E49E /* ImageSource.swift */; };
 		6E40996A99656E6AE04954459DC584D8 /* Pods-SwiftyImageIO_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A62981B6E8A5D514FC6C961B1DD488 /* Pods-SwiftyImageIO_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75C6DD120A79D248D848ECFF3E5DE269 /* Pods-SwiftyImageIO_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9075AFD1D94DE0DA4D0C8111380206E8 /* Pods-SwiftyImageIO_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A6661A8255DB279EC999157BD446B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 		8FD0F3C8373746353572E1B3213827FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 		97E15601741C051098562429C6030B1C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C283F14E70F91E38ADE8A38BB4544BEE /* ImageIO.framework */; };
 		A4781D83D35F6BA17C55906FEC2D1350 /* Pods-SwiftyImageIO_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3315930C80E3D0109C1CE0B14B7182E /* Pods-SwiftyImageIO_Example-dummy.m */; };
-		AD8B37388AA7799E602F1D77B481F8AB /* ImageDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D128D8DEB792AA74E66A16AB4A7D4BBE /* ImageDestination.swift */; };
-		BE9663004A6AB8F8D5DFF2B35160D262 /* SwiftyImageIO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E6B76A6829DE282D0B86D5F67CD9A5 /* SwiftyImageIO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD8B37388AA7799E602F1D77B481F8AB /* ImageDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086C109EA8FA1E4A3AFCAEF8F76E763D /* ImageDestination.swift */; };
+		BE9663004A6AB8F8D5DFF2B35160D262 /* SwiftyImageIO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2371AE04C476D9F0D5F8679FD82A1407 /* SwiftyImageIO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D67188F7A5167AC003A5A332F89AFD1F /* Pods-SwiftyImageIO_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C81A37ADB51FAF2CA39E80F98023E72 /* Pods-SwiftyImageIO_Tests-dummy.m */; };
 		FB7243488FCD61105A9F770C60B9DD2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -42,37 +42,37 @@
 		0004E8A2CD9200792D78270656639833 /* Pods-SwiftyImageIO_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyImageIO_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		00A62981B6E8A5D514FC6C961B1DD488 /* Pods-SwiftyImageIO_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyImageIO_Example-umbrella.h"; sourceTree = "<group>"; };
 		07762830A6F20C4E17F6F48E5FC25267 /* Pods-SwiftyImageIO_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyImageIO_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		086C109EA8FA1E4A3AFCAEF8F76E763D /* ImageDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageDestination.swift; sourceTree = "<group>"; };
+		11147E97EB688D1F0862FF6E3FA91FAD /* SwiftyImageIO-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyImageIO-prefix.pch"; sourceTree = "<group>"; };
 		16ADBE95B6E2D61D6394E1A33BC47EBF /* Pods-SwiftyImageIO_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1A9FB89ACFB2E1A0F5849CA467401324 /* Pods-SwiftyImageIO_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SwiftyImageIO_Tests.modulemap"; sourceTree = "<group>"; };
-		1FD73F96A601934D0C432135BFE6907D /* SwiftyImageIO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyImageIO-dummy.m"; sourceTree = "<group>"; };
 		215272FA23BC114D75FA52CE2D848C0F /* Pods-SwiftyImageIO_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SwiftyImageIO_Example.modulemap"; sourceTree = "<group>"; };
+		2205721C09E57592FD09442D85001999 /* SwiftyImageIO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyImageIO-dummy.m"; sourceTree = "<group>"; };
+		2371AE04C476D9F0D5F8679FD82A1407 /* SwiftyImageIO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyImageIO-umbrella.h"; sourceTree = "<group>"; };
 		23E2AC36D00FE00DB7C82AC91B93DACC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		371A0AF08CA766B8288C3387F0FE4715 /* SwiftyImageIO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyImageIO.xcconfig; sourceTree = "<group>"; };
 		3A11DCB97543B38993BF81A8265D9471 /* Pods-SwiftyImageIO_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BBF059422D968F547A5DE3766CA4B5C /* Pods-SwiftyImageIO_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyImageIO_Example-resources.sh"; sourceTree = "<group>"; };
 		3C81A37ADB51FAF2CA39E80F98023E72 /* Pods-SwiftyImageIO_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyImageIO_Tests-dummy.m"; sourceTree = "<group>"; };
-		3D46114C15D5E778371070128C427D43 /* SwiftyImageIO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyImageIO.modulemap; sourceTree = "<group>"; };
 		45196F25A79E399CE9BF4BFACA40310C /* Pods-SwiftyImageIO_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyImageIO_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		487C4ACFBF7F2B150E74A52DD88CB5E5 /* Pods-SwiftyImageIO_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		51705E6A3CEF2FFB97F32447535C1754 /* ImageSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
 		5308D304389A9FB9AF8F630CEEA2C8B4 /* SwiftyImageIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyImageIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFE4C0F9FF679BEB040DC7618DD5C88 /* Pods-SwiftyImageIO_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyImageIO_Example.release.xcconfig"; sourceTree = "<group>"; };
-		657A16AF280E481EEBCAF8B4409C24B9 /* SwiftyImageIO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyImageIO.xcconfig; sourceTree = "<group>"; };
-		703AAA8ED3CB9BD537E092D09E72303C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9075AFD1D94DE0DA4D0C8111380206E8 /* Pods-SwiftyImageIO_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyImageIO_Tests-umbrella.h"; sourceTree = "<group>"; };
 		921EEF28D7311F789C712591AA24FD2A /* Pods-SwiftyImageIO_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyImageIO_Tests-resources.sh"; sourceTree = "<group>"; };
-		92B72617DDA761795389FAEFE036E657 /* SwiftyImageIO-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyImageIO-prefix.pch"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9C83D7FD7E37FBD9C09BE3A24681BCD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B9E6B76A6829DE282D0B86D5F67CD9A5 /* SwiftyImageIO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyImageIO-umbrella.h"; sourceTree = "<group>"; };
 		C0B8E4AF09CDEF46342193F696913688 /* Pods_SwiftyImageIO_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyImageIO_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C283F14E70F91E38ADE8A38BB4544BEE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		C74FD80E26AB8F7736917DEB73A12438 /* Pods_SwiftyImageIO_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyImageIO_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D128D8DEB792AA74E66A16AB4A7D4BBE /* ImageDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageDestination.swift; sourceTree = "<group>"; };
 		D2104ECFEB00C801CA6104E7E6F5CC7E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3315930C80E3D0109C1CE0B14B7182E /* Pods-SwiftyImageIO_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyImageIO_Example-dummy.m"; sourceTree = "<group>"; };
+		E648F7E20A7937C0E39ABABA79F71041 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2B13FC616AD2F1AE08337FC8F29D7EA /* Pods-SwiftyImageIO_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyImageIO_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F3EF4B191045EF539F86955EA76B8A5D /* Pods-SwiftyImageIO_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyImageIO_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F5F7BE1189B1729E57303DDFE6BB5366 /* Pods-SwiftyImageIO_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyImageIO_Example-frameworks.sh"; sourceTree = "<group>"; };
+		F7CE456BCC57F2559BB50A07FBE5E49E /* ImageSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
+		F9EAD84C6CF722103D47D9ED90C67A8D /* SwiftyImageIO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyImageIO.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +104,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		002419666A216030F72AF0545520A45F /* Classes */ = {
+		432A703352CAAE3D9C72C252EE4C4D35 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D128D8DEB792AA74E66A16AB4A7D4BBE /* ImageDestination.swift */,
-				51705E6A3CEF2FFB97F32447535C1754 /* ImageSource.swift */,
+				086C109EA8FA1E4A3AFCAEF8F76E763D /* ImageDestination.swift */,
+				F7CE456BCC57F2559BB50A07FBE5E49E /* ImageSource.swift */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -124,7 +124,7 @@
 		4456752C9F5D817399FB1D950F7A82D5 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				82B2E0E82DFCA855232A2B6FC1AAEA23 /* SwiftyImageIO */,
+				B4710FF0F619AC0FC51A618824B1524E /* SwiftyImageIO */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -139,12 +139,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5857237DBE7B6AE41841F33C03FA1A84 /* Pod */ = {
+		5ECA04BFB488CF7AAF78511B0222DAEA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				002419666A216030F72AF0545520A45F /* Classes */,
+				E648F7E20A7937C0E39ABABA79F71041 /* Info.plist */,
+				F9EAD84C6CF722103D47D9ED90C67A8D /* SwiftyImageIO.modulemap */,
+				371A0AF08CA766B8288C3387F0FE4715 /* SwiftyImageIO.xcconfig */,
+				2205721C09E57592FD09442D85001999 /* SwiftyImageIO-dummy.m */,
+				11147E97EB688D1F0862FF6E3FA91FAD /* SwiftyImageIO-prefix.pch */,
+				2371AE04C476D9F0D5F8679FD82A1407 /* SwiftyImageIO-umbrella.h */,
 			);
-			path = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SwiftyImageIO";
 			sourceTree = "<group>";
 		};
 		671DCAA2830A4F98C7CC22E57F36D91A /* Targets Support Files */ = {
@@ -165,20 +171,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7D7C55786C82281AE0FA6622E5175324 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				703AAA8ED3CB9BD537E092D09E72303C /* Info.plist */,
-				3D46114C15D5E778371070128C427D43 /* SwiftyImageIO.modulemap */,
-				657A16AF280E481EEBCAF8B4409C24B9 /* SwiftyImageIO.xcconfig */,
-				1FD73F96A601934D0C432135BFE6907D /* SwiftyImageIO-dummy.m */,
-				92B72617DDA761795389FAEFE036E657 /* SwiftyImageIO-prefix.pch */,
-				B9E6B76A6829DE282D0B86D5F67CD9A5 /* SwiftyImageIO-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SwiftyImageIO";
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -188,16 +180,6 @@
 				5760CC00BB2CC71AB3B07CB3CEA7239A /* Products */,
 				671DCAA2830A4F98C7CC22E57F36D91A /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		82B2E0E82DFCA855232A2B6FC1AAEA23 /* SwiftyImageIO */ = {
-			isa = PBXGroup;
-			children = (
-				5857237DBE7B6AE41841F33C03FA1A84 /* Pod */,
-				7D7C55786C82281AE0FA6622E5175324 /* Support Files */,
-			);
-			name = SwiftyImageIO;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		8AD4187A1E988E312A422A9A60D028C4 /* Pods-SwiftyImageIO_Example */ = {
@@ -234,6 +216,16 @@
 			);
 			name = "Pods-SwiftyImageIO_Tests";
 			path = "Target Support Files/Pods-SwiftyImageIO_Tests";
+			sourceTree = "<group>";
+		};
+		B4710FF0F619AC0FC51A618824B1524E /* SwiftyImageIO */ = {
+			isa = PBXGroup;
+			children = (
+				432A703352CAAE3D9C72C252EE4C4D35 /* Sources */,
+				5ECA04BFB488CF7AAF78511B0222DAEA /* Support Files */,
+			);
+			name = SwiftyImageIO;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,7 +489,7 @@
 		};
 		4B4AE07E932D1209EB0329CF57CE2B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 657A16AF280E481EEBCAF8B4409C24B9 /* SwiftyImageIO.xcconfig */;
+			baseConfigurationReference = 371A0AF08CA766B8288C3387F0FE4715 /* SwiftyImageIO.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -636,7 +628,7 @@
 		};
 		F3F13054C1B96BCF844A02AD6DD5E7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 657A16AF280E481EEBCAF8B4409C24B9 /* SwiftyImageIO.xcconfig */;
+			baseConfigurationReference = 371A0AF08CA766B8288C3387F0FE4715 /* SwiftyImageIO.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

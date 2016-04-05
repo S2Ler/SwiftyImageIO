@@ -1,3 +1,4 @@
+import Foundation
 import ImageIO
 
 //TODO: Copy/Paste documentation from ImageIO
@@ -22,7 +23,7 @@ public final class ImageDestination {
     case LossyCompressionQuality(Double)
     case MaximumCompressionQuality
     case LosslessCompressionQuality
-    case BackgroundColor(UIColor)
+    case BackgroundColor(CGColor)
     case ImageProperty(key: String, value: AnyObject)
   }
 }
@@ -37,24 +38,38 @@ public extension ImageDestination.Property {
     case .LosslessCompressionQuality:
       return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0)
     case .BackgroundColor(let color):
-      return (key: kCGImageDestinationBackgroundColor as String, value: color.CGColor)
+      return (key: kCGImageDestinationBackgroundColor as String, value: color)
     case .ImageProperty(let key, let value):
       return (key: key, value: value)
     }
   }
 }
 
-public extension SequenceType where Generator.Element == ImageDestination.Property {
-  func rawProperties() -> CFDictionary {
-    var dictionary: [String: AnyObject] = [:]
-    for property in self {
-      let (key, value) = property.imageIOProperty
-      dictionary[key] = value
+#if swift(>=3.0)
+  public extension Sequence where Iterator.Element == ImageDestination.Property {
+    func rawProperties() -> CFDictionary {
+      var dictionary: [String: AnyObject] = [:]
+      for property in self {
+        let (key, value) = property.imageIOProperty
+        dictionary[key] = value
+      }
+      
+      return dictionary as CFDictionary
     }
-    
-    return dictionary as CFDictionary
   }
-}
+#else
+  public extension SequenceType where Generator.Element == ImageDestination.Property {
+    func rawProperties() -> CFDictionary {
+      var dictionary: [String: AnyObject] = [:]
+      for property in self {
+        let (key, value) = property.imageIOProperty
+        dictionary[key] = value
+      }
+      
+      return dictionary as CFDictionary
+    }
+  }
+#endif
 
 //MARK: - Adding Images
 public extension ImageDestination {

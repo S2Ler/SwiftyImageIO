@@ -1,5 +1,5 @@
 PODS:
-  - SwiftyImageIO (0.1.0)
+  - SwiftyImageIO (0.1.1)
 
 DEPENDENCIES:
   - SwiftyImageIO (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftyImageIO: 2e4a10e99777f0f6acf057ed6d9bdbbc6e617348
+  SwiftyImageIO: 21430cca2cd9783d3c3bf99b2c2196acbe178ed9
 
 PODFILE CHECKSUM: 73d351b957e6d775a2ba152c7d0f3ff012828841
 

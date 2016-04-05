@@ -1,3 +1,4 @@
+import Foundation
 import ImageIO
 
 //TODO: Copy/Paste documentation from ImageIO
@@ -53,17 +54,31 @@ public extension ImageSource.Options {
   }
 }
 
-public extension SequenceType where Generator.Element == ImageSource.Options {
-  func rawOptions() -> CFDictionary {
-    var dictionary: [String: AnyObject] = [:]
-    for option in self {
-      let (key, value) = option.imageIOOption
-      dictionary[key] = value
+#if swift(>=3.0)
+  public extension Sequence where Iterator.Element == ImageSource.Options {
+    func rawOptions() -> CFDictionary {
+      var dictionary: [String: AnyObject] = [:]
+      for option in self {
+        let (key, value) = option.imageIOOption
+        dictionary[key] = value
+      }
+      
+      return dictionary as CFDictionary
     }
-    
-    return dictionary as CFDictionary
   }
-}
+#else
+  public extension SequenceType where Generator.Element == ImageSource.Options {
+    func rawOptions() -> CFDictionary {
+      var dictionary: [String: AnyObject] = [:]
+      for option in self {
+        let (key, value) = option.imageIOOption
+        dictionary[key] = value
+      }
+      
+      return dictionary as CFDictionary
+    }
+  }
+#endif
 
 public final class IncrementalImageSource: ImageSource {
 }
