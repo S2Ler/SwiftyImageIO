@@ -9,6 +9,30 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Examples
+
+
+### Create image thumbnail
+
+```swift
+import SwiftyImageIO
+
+let source = ImageSource(data: imageData, options: nil)
+let thumbnailCGImage = source?.createThumbnail(size: thumbnailSize)
+```
+
+### Write image to disk
+
+```swift
+import SwiftyImageIO
+import MobileCoreServices
+
+if let imageDestination = ImageDestination(url: saveURL, UTI: kUTTypeJPEG as String, imageCount: 1) {
+  imageDestination.addImage(cgImage)
+  let imageSaved = imageDestination.finalize()
+}
+```
+
 ## Requirements
 
 ## Installation
