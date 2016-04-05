@@ -129,11 +129,13 @@ public final class IncrementalImageSource: ImageSource {
 }
 
 public extension ImageSource {
+  /// Returns an array of the UTIs that are supported for image sources.
   public static func supportedUTIs() -> [String] {
     let identifiers = CGImageSourceCopyTypeIdentifiers() as [AnyObject] as! [String]
     return identifiers
   }
   
+  /// Returns whether ImageSource supports provided s`UTI`
   public static func supportsUTI(UTI: String) -> Bool {
     return supportedUTIs().contains(UTI)
   }
@@ -184,14 +186,17 @@ public extension IncrementalImageSource {
 
 //MARK: - Getting Information From an Image Source
 public extension ImageSource {
+  /// The uniform type identifier of the source container.
   public var UTI: String? {
     return CGImageSourceGetType(imageSource) as String?
   }
   
+  /// Returns the Core Foundation type ID for the image source.
   public static var typeID: CFTypeID {
     return CGImageSourceGetTypeID()
   }
   
+  /// Returns the number of images (not including thumbnails) in the image source. If the image source is a multilayered PSD file, return 1.
   public var imageCount: Int {
     return CGImageSourceGetCount(imageSource)
   }
