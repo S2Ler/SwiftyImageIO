@@ -1,9 +1,11 @@
 # SwiftyImageIO
 
+[![Swift](https://img.shields.io/badge/Swift-3.0%20%7C%202.2-orange.svg)]()
 [![Build Status](https://travis-ci.org/diejmon/SwiftyImageIO.svg?branch=master)](https://travis-ci.org/diejmon/SwiftyImageIO)
 [![Version](https://img.shields.io/cocoapods/v/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![License](https://img.shields.io/cocoapods/l/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
+
 
 Swift wrapper around ImageIO framework.
 
