@@ -149,12 +149,20 @@ public extension ImageSource {
    - parameter index:   The index that specifies the location of the image. The index is zero-based.
    - parameter options: An array that specifies additional creation options.
    
-   - returns: Returns a CGImage object.
+   - returns: Returns a `CGImage` object.
    */
   public func createImage(atIndex index: Int = 0, options: [Options]? = nil) -> CGImage? {
     return CGImageSourceCreateImageAtIndex(imageSource, index, options?.rawOptions())
   }
   
+  /**
+   Creates a thumbnail image of the image located at a specified location in an image source.
+   
+   - parameter index:   The index that specifies the location of the image. The index is zero-based.
+   - parameter options: An array that specifies additional creation options.
+   
+   - returns: A `CGImage` object.
+   */
   public func createThumbnail(atIndex index: Int = 0, options: [Options]? = nil) -> CGImage? {
     return CGImageSourceCreateThumbnailAtIndex(imageSource, index, options?.rawOptions())
   }
