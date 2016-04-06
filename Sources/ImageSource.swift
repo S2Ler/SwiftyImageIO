@@ -143,6 +143,14 @@ public extension ImageSource {
 
 //MARK: - Creating Images From an Image Source
 public extension ImageSource {
+  /**
+   Creates a CGImage object for the image data associated with the specified index in an image source.
+   
+   - parameter index:   The index that specifies the location of the image. The index is zero-based.
+   - parameter options: An array that specifies additional creation options.
+   
+   - returns: Returns a CGImage object.
+   */
   public func createImage(atIndex index: Int = 0, options: [Options]? = nil) -> CGImage? {
     return CGImageSourceCreateImageAtIndex(imageSource, index, options?.rawOptions())
   }
