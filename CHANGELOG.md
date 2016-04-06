@@ -11,4 +11,4 @@ Initial version
 
 ## 0.1.2
 
-* Add documentation
+* Add ImageSource documentation

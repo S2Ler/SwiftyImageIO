@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftyImageIO"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "A swift wrapper around ImageIO framework"
   s.description      = <<-DESC
   Provides an easy interface to ImageIO framework.
