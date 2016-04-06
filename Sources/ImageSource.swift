@@ -167,6 +167,14 @@ public extension ImageSource {
     return CGImageSourceCreateThumbnailAtIndex(imageSource, index, options?.rawOptions())
   }
   
+  /**
+   Create an incremental image source.
+   
+   - parameter options: An array that specifies additional creation options.
+   
+   - returns: Returns an image source object.
+   - seealso: `CGImageSourceCreateIncremental`
+   */
   public static func createIncremental(options options: [Options]? = nil) -> IncrementalImageSource {
     return IncrementalImageSource(imageSource: CGImageSourceCreateIncremental(options?.rawOptions()))
   }
