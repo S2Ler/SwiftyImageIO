@@ -1,8 +1,6 @@
 import Foundation
 import ImageIO
 
-//TODO: Copy/Paste documentation from ImageIO
-
 /** ImageSource objects, available in OS X v10.4 or later and iOS 4.0 and later, abstract the data-reading task. An image source can read image data from a URL, a CFData object, or a data consumer.
 
     After creating a ImageSource object for the appropriate source, you can obtain images, thumbnails, image properties, and other image information.
@@ -125,11 +123,13 @@ public extension ImageSource.Options {
   }
 #endif
 
+/// Represents an incremental image source
 public final class IncrementalImageSource: ImageSource {
 }
 
 public extension ImageSource {
   /// Returns an array of the UTIs that are supported for image sources.
+  /// - seealso: `CGImageSourceCopyTypeIdentifiers`
   public static func supportedUTIs() -> [String] {
     let identifiers = CGImageSourceCopyTypeIdentifiers() as [AnyObject] as! [String]
     return identifiers
@@ -150,6 +150,8 @@ public extension ImageSource {
    - parameter options: An array that specifies additional creation options.
    
    - returns: Returns a `CGImage` object.
+   - seealso: `CGImageSourceCreateImageAtIndex`
+
    */
   public func createImage(atIndex index: Int = 0, options: [Options]? = nil) -> CGImage? {
     return CGImageSourceCreateImageAtIndex(imageSource, index, options?.rawOptions())
@@ -162,6 +164,7 @@ public extension ImageSource {
    - parameter options: An array that specifies additional creation options.
    
    - returns: A `CGImage` object.
+   - seealso: `CGImageSourceCreateThumbnailAtIndex`
    */
   public func createThumbnail(atIndex index: Int = 0, options: [Options]? = nil) -> CGImage? {
     return CGImageSourceCreateThumbnailAtIndex(imageSource, index, options?.rawOptions())
@@ -211,35 +214,60 @@ public extension IncrementalImageSource {
 //MARK: - Getting Information From an Image Source
 public extension ImageSource {
   /// The uniform type identifier of the source container.
+  /// - seealso: `CGImageSourceGetType`
   public var UTI: String? {
     return CGImageSourceGetType(imageSource) as String?
   }
   
   /// Returns the Core Foundation type ID for the image source.
+  /// - seealso: `CGImageSourceGetTypeID`
   public static var typeID: CFTypeID {
     return CGImageSourceGetTypeID()
   }
   
   /// Returns the number of images (not including thumbnails) in the image source. If the image source is a multilayered PSD file, return 1.
+  /// - seealso: `CGImageSourceGetCount`
   public var imageCount: Int {
     return CGImageSourceGetCount(imageSource)
   }
   
+  /// Return the status of an image source.
+  /// - seealso: `CGImageSourceGetStatus`
   public var status: CGImageSourceStatus {
     return CGImageSourceGetStatus(imageSource)
   }
   
+  /// Returns the current status of an image that is at a specified location in an image source.
+  /// - seealso: CGImageSourceGetStatusAtIndex
   public func statusForImage(atIndex index: Int = 0) -> CGImageSourceStatus {
     return CGImageSourceGetStatusAtIndex(imageSource, index)
   }
   
-  //TODO: Return wrapper around CFImageProperties
+  /**
+   Returns the properties of the image source.
+   - returns: A dictionary that contains the properties associated with the image source container.
+   - todo: Return wrapper around CFImageProperties
+   - seealso: `CGImageSourceCopyProperties`
+   - seealso: [CGImageProperties Reference](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGImageProperties_Reference/) for a list of properties that can be in the dictionary.
+   */
   public func properties(options: [Options]? = nil) -> [String: AnyObject]? {
     guard let rawProperties = CGImageSourceCopyProperties(imageSource, options?.rawOptions()) else { return nil }
     return (rawProperties as NSDictionary) as? [String: AnyObject]
   }
   
-  //TODO: Return wrapper around CFImageProperties
+  
+  /**
+   Returns the properties of the image at a specified location in an image source.
+   
+   - parameter index:   The index of the image whose properties you want to obtain. The index is zero-based.
+   - parameter options: An array you can use to request additional options.
+   
+   - returns: A dictionary that contains the properties associated with the image.
+   
+   - seealso: `CGImageSourceCopyPropertiesAtIndex`
+   - seealso: [CGImageProperties Reference](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGImageProperties_Reference/) for a list of properties that can be in the dictionary.
+   - todo: Return wrapper around `CFImageProperties`
+   */
   public func propertiesForImage(atIndex index: Int = 0, options: [Options]? = nil) -> [String: AnyObject]? {
     guard let rawProperties =  CGImageSourceCopyPropertiesAtIndex(imageSource, index, options?.rawOptions())
       else { return nil }
