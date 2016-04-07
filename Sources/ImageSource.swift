@@ -49,7 +49,18 @@ public class ImageSource {
     self.imageSource = imageSource
   }
   
-  //TODO: CGImageSourceCreateWithDataProvider
+  /**
+   Creates an image source that reads data from the specified data provider.
+   
+   - parameter dataProvider: The data provider to read from.
+   - parameter options:      An array that specifies additional creation options.
+   
+   - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
+   */
+  public init?(dataProvider:CGDataProvider, options: [Options]?) {
+    guard let imageSource = CGImageSourceCreateWithDataProvider(dataProvider, options?.rawOptions()) else { return nil }
+    self.imageSource = imageSource;
+  }
   
   /**
    Available options which you can submit for various `ImageSource` functions

@@ -12,3 +12,7 @@ Initial version
 ## 0.1.2
 
 * Add ImageSource documentation
+
+## 0.1.3
+
+* Add CGImageSourceCreateWithDataProvider wrapper
