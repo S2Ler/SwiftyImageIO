@@ -17,7 +17,11 @@ public final class ImageDestination {
     self.imageDestination = imageDestination
   }
   
-  //TODO: Implement CGImageDestinationCreateWithDataConsumer
+  public init?(dataConsumer: CGDataConsumer, imageType: String, imageCount: Int, options: [Property]? = nil) {
+    guard let imageDestination = CGImageDestinationCreateWithDataConsumer(dataConsumer, imageType, imageCount, options?.rawProperties())
+      else { return nil }
+    self.imageDestination = imageDestination
+  }
   
   public enum Property {
     case LossyCompressionQuality(Double)
