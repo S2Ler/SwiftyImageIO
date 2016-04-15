@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![License](https://img.shields.io/cocoapods/l/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
+[![codebeat badge](https://codebeat.co/badges/e67c5860-b3fd-4c7a-b825-cd698f13a3ad)](https://codebeat.co/projects/github-com-diejmon-swiftyimageio)
 
 
 Swift wrapper around ImageIO framework.
