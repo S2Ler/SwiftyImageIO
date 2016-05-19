@@ -65,7 +65,9 @@
 				093440FA1CEE36590046FC6C /* SwiftyImageIOTests */,
 				093440ED1CEE36590046FC6C /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		093440ED1CEE36590046FC6C /* Products */ = {
 			isa = PBXGroup;
