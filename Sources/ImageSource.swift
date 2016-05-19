@@ -106,33 +106,18 @@ public extension ImageSource.Options {
   }
 }
 
-#if swift(>=3.0)
-  public extension Sequence where Iterator.Element == ImageSource.Options {
-    /// Converts array of ImageSource.Options to ImageIO dictionary of options
-    func rawOptions() -> CFDictionary {
-      var dictionary: [String: AnyObject] = [:]
-      for option in self {
-        let (key, value) = option.imageIOOption
-        dictionary[key] = value
-      }
-      
-      return dictionary as CFDictionary
+public extension SequenceType where Generator.Element == ImageSource.Options {
+  /// Converts array of ImageSource.Options to ImageIO dictionary of options
+  func rawOptions() -> CFDictionary {
+    var dictionary: [String: AnyObject] = [:]
+    for option in self {
+      let (key, value) = option.imageIOOption
+      dictionary[key] = value
     }
+    
+    return dictionary as CFDictionary
   }
-#else
-  public extension SequenceType where Generator.Element == ImageSource.Options {
-    /// Converts array of ImageSource.Options to ImageIO dictionary of options
-    func rawOptions() -> CFDictionary {
-      var dictionary: [String: AnyObject] = [:]
-      for option in self {
-        let (key, value) = option.imageIOOption
-        dictionary[key] = value
-      }
-      
-      return dictionary as CFDictionary
-    }
-  }
-#endif
+}
 
 /// Represents an incremental image source
 public final class IncrementalImageSource: ImageSource {

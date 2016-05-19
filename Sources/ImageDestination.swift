@@ -49,31 +49,18 @@ public extension ImageDestination.Property {
   }
 }
 
-#if swift(>=3.0)
-  public extension Sequence where Iterator.Element == ImageDestination.Property {
-    func rawProperties() -> CFDictionary {
-      var dictionary: [String: AnyObject] = [:]
-      for property in self {
-        let (key, value) = property.imageIOProperty
-        dictionary[key] = value
-      }
-      
-      return dictionary as CFDictionary
+
+public extension SequenceType where Generator.Element == ImageDestination.Property {
+  func rawProperties() -> CFDictionary {
+    var dictionary: [String: AnyObject] = [:]
+    for property in self {
+      let (key, value) = property.imageIOProperty
+      dictionary[key] = value
     }
+    
+    return dictionary as CFDictionary
   }
-#else
-  public extension SequenceType where Generator.Element == ImageDestination.Property {
-    func rawProperties() -> CFDictionary {
-      var dictionary: [String: AnyObject] = [:]
-      for property in self {
-        let (key, value) = property.imageIOProperty
-        dictionary[key] = value
-      }
-      
-      return dictionary as CFDictionary
-    }
-  }
-#endif
+}
 
 //MARK: - Adding Images
 public extension ImageDestination {
