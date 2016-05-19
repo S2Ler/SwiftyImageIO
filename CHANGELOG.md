@@ -1,6 +1,15 @@
-## 0.1.0
+## 0.1.4
 
-Initial version
+* Remove Swift 3.0 support
+* Add Xcode project
+
+## 0.1.3
+
+* Add CGImageSourceCreateWithDataProvider wrapper
+
+## 0.1.2
+
+* Add ImageSource documentation
 
 ## 0.1.1
 
@@ -9,10 +18,7 @@ Initial version
 * Swift 3.0 support
 * OS X support
 
-## 0.1.2
+## 0.1.0
 
-* Add ImageSource documentation
+Initial version
 
-## 0.1.3
-
-* Add CGImageSourceCreateWithDataProvider wrapper
