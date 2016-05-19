@@ -1,4 +1,8 @@
-import UIKit
+#if os(OSX)
+  import AppKit
+#else
+  import UIKit
+#endif
 import XCTest
 import SwiftyImageIO
 
@@ -56,10 +60,23 @@ class Tests: XCTestCase {
     let data = NSMutableData()
     guard let destination = ImageDestination(data: data, UTI: "public.png", imageCount: 1)
       else { XCTAssert(false); return }
-    destination.addImage(UIImage(contentsOfFile: pngImageURL.path!)!.CGImage!)
+    #if os(OSX)
+      let image = NSImage(contentsOfFile: pngImageURL.path!)!
+      var imageRect:CGRect = CGRectMake(0, 0, image.size.width, image.size.height)
+      let cgimage = image.CGImageForProposedRect(&imageRect, context: nil, hints: nil)!
+    #else
+      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path!)!.CGImage!
+    #endif
+    
+    destination.addImage(cgimage)
     XCTAssertTrue(destination.finalize())
-    let image = UIImage(data: data)
-    XCTAssertNotNil(image)
+    #if os(OSX)
+      let out_image = NSImage(data: data)
+    #else
+      let out_image = UIImage(data: data)
+    #endif
+    
+    XCTAssertNotNil(out_image)
   }
 }
 

@@ -14,6 +14,20 @@
 		0934410D1CEE36EC0046FC6C /* gifSample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0934410A1CEE36EC0046FC6C /* gifSample.gif */; };
 		0934410E1CEE36EC0046FC6C /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 0934410B1CEE36EC0046FC6C /* sample.png */; };
 		0934410F1CEE36EC0046FC6C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934410C1CEE36EC0046FC6C /* Tests.swift */; };
+		093441181CEE39930046FC6C /* SwiftyImageIO_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 093441171CEE39930046FC6C /* SwiftyImageIO_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0934411F1CEE39930046FC6C /* SwiftyImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093441151CEE39930046FC6C /* SwiftyImageIO.framework */; };
+		0934412D1CEE3A2B0046FC6C /* ImageDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093441061CEE368A0046FC6C /* ImageDestination.swift */; };
+		0934412E1CEE3A2B0046FC6C /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093441071CEE368A0046FC6C /* ImageSource.swift */; };
+		0934412F1CEE3A350046FC6C /* gifSample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0934410A1CEE36EC0046FC6C /* gifSample.gif */; };
+		093441301CEE3A350046FC6C /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 0934410B1CEE36EC0046FC6C /* sample.png */; };
+		093441311CEE3A350046FC6C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934410C1CEE36EC0046FC6C /* Tests.swift */; };
+		0934413A1CEE3A770046FC6C /* SwiftyImageIO_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 093441391CEE3A770046FC6C /* SwiftyImageIO_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		093441411CEE3A770046FC6C /* SwiftyImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093441371CEE3A770046FC6C /* SwiftyImageIO.framework */; };
+		0934414F1CEE3AA20046FC6C /* gifSample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0934410A1CEE36EC0046FC6C /* gifSample.gif */; };
+		093441501CEE3AA20046FC6C /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 0934410B1CEE36EC0046FC6C /* sample.png */; };
+		093441511CEE3AA20046FC6C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934410C1CEE36EC0046FC6C /* Tests.swift */; };
+		093441521CEE3AA60046FC6C /* ImageDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093441061CEE368A0046FC6C /* ImageDestination.swift */; };
+		093441531CEE3AA60046FC6C /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093441071CEE368A0046FC6C /* ImageSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,19 +38,43 @@
 			remoteGlobalIDString = 093440EB1CEE36590046FC6C;
 			remoteInfo = SwiftyImageIO;
 		};
+		093441201CEE39930046FC6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 093440E31CEE36590046FC6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 093441141CEE39930046FC6C;
+			remoteInfo = SwiftyImageIO_tvOS;
+		};
+		093441421CEE3A770046FC6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 093440E31CEE36590046FC6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 093441361CEE3A770046FC6C;
+			remoteInfo = SwiftyImageIO_macOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		093440EC1CEE36590046FC6C /* SwiftyImageIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyImageIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		093440EF1CEE36590046FC6C /* SwiftyImageIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyImageIO.h; sourceTree = "<group>"; };
 		093440F11CEE36590046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		093440F61CEE36590046FC6C /* SwiftyImageIOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyImageIOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		093440F61CEE36590046FC6C /* SwiftyImageIO_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyImageIO_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		093440FD1CEE36590046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		093441061CEE368A0046FC6C /* ImageDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDestination.swift; path = ../../Sources/ImageDestination.swift; sourceTree = "<group>"; };
-		093441071CEE368A0046FC6C /* ImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSource.swift; path = ../../Sources/ImageSource.swift; sourceTree = "<group>"; };
-		0934410A1CEE36EC0046FC6C /* gifSample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gifSample.gif; path = ../../Example/Tests/gifSample.gif; sourceTree = "<group>"; };
-		0934410B1CEE36EC0046FC6C /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ../../Example/Tests/sample.png; sourceTree = "<group>"; };
-		0934410C1CEE36EC0046FC6C /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests.swift; path = ../../Example/Tests/Tests.swift; sourceTree = "<group>"; };
+		093441061CEE368A0046FC6C /* ImageDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDestination.swift; path = ../Sources/ImageDestination.swift; sourceTree = "<group>"; };
+		093441071CEE368A0046FC6C /* ImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSource.swift; path = ../Sources/ImageSource.swift; sourceTree = "<group>"; };
+		0934410A1CEE36EC0046FC6C /* gifSample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gifSample.gif; path = ../Example/Tests/gifSample.gif; sourceTree = "<group>"; };
+		0934410B1CEE36EC0046FC6C /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ../Example/Tests/sample.png; sourceTree = "<group>"; };
+		0934410C1CEE36EC0046FC6C /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests.swift; path = ../Example/Tests/Tests.swift; sourceTree = "<group>"; };
+		093441151CEE39930046FC6C /* SwiftyImageIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyImageIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		093441171CEE39930046FC6C /* SwiftyImageIO_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyImageIO_tvOS.h; sourceTree = "<group>"; };
+		093441191CEE39930046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0934411E1CEE39930046FC6C /* SwiftyImageIO_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyImageIO_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		093441251CEE39930046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		093441371CEE3A770046FC6C /* SwiftyImageIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyImageIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		093441391CEE3A770046FC6C /* SwiftyImageIO_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyImageIO_macOS.h; sourceTree = "<group>"; };
+		0934413B1CEE3A770046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		093441401CEE3A770046FC6C /* SwiftyImageIO_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyImageIO_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		093441471CEE3A770046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,14 +93,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		093441111CEE39930046FC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0934411B1CEE39930046FC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0934411F1CEE39930046FC6C /* SwiftyImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		093441331CEE3A770046FC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0934413D1CEE3A770046FC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093441411CEE3A770046FC6C /* SwiftyImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		093440E21CEE36590046FC6C = {
 			isa = PBXGroup;
 			children = (
+				0934414E1CEE3A950046FC6C /* Tests */,
+				0934412C1CEE3A200046FC6C /* Sources */,
 				093440EE1CEE36590046FC6C /* SwiftyImageIO */,
 				093440FA1CEE36590046FC6C /* SwiftyImageIOTests */,
+				093441161CEE39930046FC6C /* SwiftyImageIO_tvOS */,
+				093441221CEE39930046FC6C /* SwiftyImageIO_tvOSTests */,
+				093441381CEE3A770046FC6C /* SwiftyImageIO_macOS */,
+				093441441CEE3A770046FC6C /* SwiftyImageIO_macOSTests */,
 				093440ED1CEE36590046FC6C /* Products */,
 			);
 			indentWidth = 2;
@@ -73,7 +147,11 @@
 			isa = PBXGroup;
 			children = (
 				093440EC1CEE36590046FC6C /* SwiftyImageIO.framework */,
-				093440F61CEE36590046FC6C /* SwiftyImageIOTests.xctest */,
+				093440F61CEE36590046FC6C /* SwiftyImageIO_iOSTests.xctest */,
+				093441151CEE39930046FC6C /* SwiftyImageIO.framework */,
+				0934411E1CEE39930046FC6C /* SwiftyImageIO_tvOSTests.xctest */,
+				093441371CEE3A770046FC6C /* SwiftyImageIO.framework */,
+				093441401CEE3A770046FC6C /* SwiftyImageIO_macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,8 +159,6 @@
 		093440EE1CEE36590046FC6C /* SwiftyImageIO */ = {
 			isa = PBXGroup;
 			children = (
-				093441061CEE368A0046FC6C /* ImageDestination.swift */,
-				093441071CEE368A0046FC6C /* ImageSource.swift */,
 				093440EF1CEE36590046FC6C /* SwiftyImageIO.h */,
 				093440F11CEE36590046FC6C /* Info.plist */,
 			);
@@ -92,12 +168,62 @@
 		093440FA1CEE36590046FC6C /* SwiftyImageIOTests */ = {
 			isa = PBXGroup;
 			children = (
-				0934410A1CEE36EC0046FC6C /* gifSample.gif */,
-				0934410B1CEE36EC0046FC6C /* sample.png */,
-				0934410C1CEE36EC0046FC6C /* Tests.swift */,
 				093440FD1CEE36590046FC6C /* Info.plist */,
 			);
 			path = SwiftyImageIOTests;
+			sourceTree = "<group>";
+		};
+		093441161CEE39930046FC6C /* SwiftyImageIO_tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				093441171CEE39930046FC6C /* SwiftyImageIO_tvOS.h */,
+				093441191CEE39930046FC6C /* Info.plist */,
+			);
+			path = SwiftyImageIO_tvOS;
+			sourceTree = "<group>";
+		};
+		093441221CEE39930046FC6C /* SwiftyImageIO_tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				093441251CEE39930046FC6C /* Info.plist */,
+			);
+			path = SwiftyImageIO_tvOSTests;
+			sourceTree = "<group>";
+		};
+		0934412C1CEE3A200046FC6C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				093441061CEE368A0046FC6C /* ImageDestination.swift */,
+				093441071CEE368A0046FC6C /* ImageSource.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		093441381CEE3A770046FC6C /* SwiftyImageIO_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				093441391CEE3A770046FC6C /* SwiftyImageIO_macOS.h */,
+				0934413B1CEE3A770046FC6C /* Info.plist */,
+			);
+			path = SwiftyImageIO_macOS;
+			sourceTree = "<group>";
+		};
+		093441441CEE3A770046FC6C /* SwiftyImageIO_macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				093441471CEE3A770046FC6C /* Info.plist */,
+			);
+			path = SwiftyImageIO_macOSTests;
+			sourceTree = "<group>";
+		};
+		0934414E1CEE3A950046FC6C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0934410A1CEE36EC0046FC6C /* gifSample.gif */,
+				0934410B1CEE36EC0046FC6C /* sample.png */,
+				0934410C1CEE36EC0046FC6C /* Tests.swift */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,12 +237,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		093441121CEE39930046FC6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093441181CEE39930046FC6C /* SwiftyImageIO_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		093441341CEE3A770046FC6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0934413A1CEE3A770046FC6C /* SwiftyImageIO_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		093440EB1CEE36590046FC6C /* SwiftyImageIO */ = {
+		093440EB1CEE36590046FC6C /* SwiftyImageIO_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 093441001CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO" */;
+			buildConfigurationList = 093441001CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_iOS" */;
 			buildPhases = (
 				093440E71CEE36590046FC6C /* Sources */,
 				093440E81CEE36590046FC6C /* Frameworks */,
@@ -127,14 +269,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftyImageIO;
+			name = SwiftyImageIO_iOS;
 			productName = SwiftyImageIO;
 			productReference = 093440EC1CEE36590046FC6C /* SwiftyImageIO.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		093440F51CEE36590046FC6C /* SwiftyImageIOTests */ = {
+		093440F51CEE36590046FC6C /* SwiftyImageIO_iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 093441031CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIOTests" */;
+			buildConfigurationList = 093441031CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_iOSTests" */;
 			buildPhases = (
 				093440F21CEE36590046FC6C /* Sources */,
 				093440F31CEE36590046FC6C /* Frameworks */,
@@ -145,9 +287,81 @@
 			dependencies = (
 				093440F91CEE36590046FC6C /* PBXTargetDependency */,
 			);
-			name = SwiftyImageIOTests;
+			name = SwiftyImageIO_iOSTests;
 			productName = SwiftyImageIOTests;
-			productReference = 093440F61CEE36590046FC6C /* SwiftyImageIOTests.xctest */;
+			productReference = 093440F61CEE36590046FC6C /* SwiftyImageIO_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		093441141CEE39930046FC6C /* SwiftyImageIO_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 093441261CEE39930046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_tvOS" */;
+			buildPhases = (
+				093441101CEE39930046FC6C /* Sources */,
+				093441111CEE39930046FC6C /* Frameworks */,
+				093441121CEE39930046FC6C /* Headers */,
+				093441131CEE39930046FC6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyImageIO_tvOS;
+			productName = SwiftyImageIO_tvOS;
+			productReference = 093441151CEE39930046FC6C /* SwiftyImageIO.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0934411D1CEE39930046FC6C /* SwiftyImageIO_tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 093441291CEE39930046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_tvOSTests" */;
+			buildPhases = (
+				0934411A1CEE39930046FC6C /* Sources */,
+				0934411B1CEE39930046FC6C /* Frameworks */,
+				0934411C1CEE39930046FC6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				093441211CEE39930046FC6C /* PBXTargetDependency */,
+			);
+			name = SwiftyImageIO_tvOSTests;
+			productName = SwiftyImageIO_tvOSTests;
+			productReference = 0934411E1CEE39930046FC6C /* SwiftyImageIO_tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		093441361CEE3A770046FC6C /* SwiftyImageIO_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 093441481CEE3A770046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_macOS" */;
+			buildPhases = (
+				093441321CEE3A770046FC6C /* Sources */,
+				093441331CEE3A770046FC6C /* Frameworks */,
+				093441341CEE3A770046FC6C /* Headers */,
+				093441351CEE3A770046FC6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyImageIO_macOS;
+			productName = SwiftyImageIO_macOS;
+			productReference = 093441371CEE3A770046FC6C /* SwiftyImageIO.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0934413F1CEE3A770046FC6C /* SwiftyImageIO_macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0934414B1CEE3A770046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_macOSTests" */;
+			buildPhases = (
+				0934413C1CEE3A770046FC6C /* Sources */,
+				0934413D1CEE3A770046FC6C /* Frameworks */,
+				0934413E1CEE3A770046FC6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				093441431CEE3A770046FC6C /* PBXTargetDependency */,
+			);
+			name = SwiftyImageIO_macOSTests;
+			productName = SwiftyImageIO_macOSTests;
+			productReference = 093441401CEE3A770046FC6C /* SwiftyImageIO_macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -166,6 +380,18 @@
 					093440F51CEE36590046FC6C = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					093441141CEE39930046FC6C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					0934411D1CEE39930046FC6C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					093441361CEE3A770046FC6C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					0934413F1CEE3A770046FC6C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 093440E61CEE36590046FC6C /* Build configuration list for PBXProject "SwiftyImageIO" */;
@@ -180,8 +406,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				093440EB1CEE36590046FC6C /* SwiftyImageIO */,
-				093440F51CEE36590046FC6C /* SwiftyImageIOTests */,
+				093440EB1CEE36590046FC6C /* SwiftyImageIO_iOS */,
+				093440F51CEE36590046FC6C /* SwiftyImageIO_iOSTests */,
+				093441141CEE39930046FC6C /* SwiftyImageIO_tvOS */,
+				0934411D1CEE39930046FC6C /* SwiftyImageIO_tvOSTests */,
+				093441361CEE3A770046FC6C /* SwiftyImageIO_macOS */,
+				0934413F1CEE3A770046FC6C /* SwiftyImageIO_macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +430,38 @@
 			files = (
 				0934410D1CEE36EC0046FC6C /* gifSample.gif in Resources */,
 				0934410E1CEE36EC0046FC6C /* sample.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		093441131CEE39930046FC6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0934411C1CEE39930046FC6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0934412F1CEE3A350046FC6C /* gifSample.gif in Resources */,
+				093441301CEE3A350046FC6C /* sample.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		093441351CEE3A770046FC6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0934413E1CEE3A770046FC6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0934414F1CEE3AA20046FC6C /* gifSample.gif in Resources */,
+				093441501CEE3AA20046FC6C /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,13 +485,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		093441101CEE39930046FC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0934412E1CEE3A2B0046FC6C /* ImageSource.swift in Sources */,
+				0934412D1CEE3A2B0046FC6C /* ImageDestination.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0934411A1CEE39930046FC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093441311CEE3A350046FC6C /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		093441321CEE3A770046FC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093441531CEE3AA60046FC6C /* ImageSource.swift in Sources */,
+				093441521CEE3AA60046FC6C /* ImageDestination.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0934413C1CEE3A770046FC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093441511CEE3AA20046FC6C /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		093440F91CEE36590046FC6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 093440EB1CEE36590046FC6C /* SwiftyImageIO */;
+			target = 093440EB1CEE36590046FC6C /* SwiftyImageIO_iOS */;
 			targetProxy = 093440F81CEE36590046FC6C /* PBXContainerItemProxy */;
+		};
+		093441211CEE39930046FC6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 093441141CEE39930046FC6C /* SwiftyImageIO_tvOS */;
+			targetProxy = 093441201CEE39930046FC6C /* PBXContainerItemProxy */;
+		};
+		093441431CEE3A770046FC6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 093441361CEE3A770046FC6C /* SwiftyImageIO_macOS */;
+			targetProxy = 093441421CEE3A770046FC6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -337,7 +643,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.diejmon.SwiftyImageIO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftyImageIO;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -355,7 +661,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.diejmon.SwiftyImageIO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftyImageIO;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -380,6 +686,138 @@
 			};
 			name = Release;
 		};
+		093441271CEE39930046FC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftyImageIO_tvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-tvOS";
+				PRODUCT_NAME = SwiftyImageIO;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		093441281CEE39930046FC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftyImageIO_tvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-tvOS";
+				PRODUCT_NAME = SwiftyImageIO;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		0934412A1CEE39930046FC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftyImageIO_tvOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		0934412B1CEE39930046FC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftyImageIO_tvOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		093441491CEE3A770046FC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SwiftyImageIO_macOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-macOS";
+				PRODUCT_NAME = SwiftyImageIO;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0934414A1CEE3A770046FC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SwiftyImageIO_macOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-macOS";
+				PRODUCT_NAME = SwiftyImageIO;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0934414C1CEE3A770046FC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwiftyImageIO_macOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0934414D1CEE3A770046FC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwiftyImageIO_macOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diejmon.SwiftyImageIO-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		093441001CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO" */ = {
+		093441001CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				093441011CEE36590046FC6C /* Debug */,
@@ -401,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		093441031CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIOTests" */ = {
+		093441031CEE36590046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				093441041CEE36590046FC6C /* Debug */,
@@ -409,6 +847,38 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		093441261CEE39930046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093441271CEE39930046FC6C /* Debug */,
+				093441281CEE39930046FC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		093441291CEE39930046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0934412A1CEE39930046FC6C /* Debug */,
+				0934412B1CEE39930046FC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		093441481CEE3A770046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093441491CEE3A770046FC6C /* Debug */,
+				0934414A1CEE3A770046FC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0934414B1CEE3A770046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0934414C1CEE3A770046FC6C /* Debug */,
+				0934414D1CEE3A770046FC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
