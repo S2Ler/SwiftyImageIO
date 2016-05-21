@@ -28,6 +28,9 @@
 		093441511CEE3AA20046FC6C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934410C1CEE36EC0046FC6C /* Tests.swift */; };
 		093441521CEE3AA60046FC6C /* ImageDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093441061CEE368A0046FC6C /* ImageDestination.swift */; };
 		093441531CEE3AA60046FC6C /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093441071CEE368A0046FC6C /* ImageSource.swift */; };
+		094D2F2D1CF0555200307068 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D2F2C1CF0555200307068 /* UTI.swift */; };
+		094D2F2E1CF0555500307068 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D2F2C1CF0555200307068 /* UTI.swift */; };
+		094D2F2F1CF0555600307068 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D2F2C1CF0555200307068 /* UTI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,7 @@
 		0934413B1CEE3A770046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		093441401CEE3A770046FC6C /* SwiftyImageIO_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyImageIO_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		093441471CEE3A770046FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		094D2F2C1CF0555200307068 /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTI.swift; path = ../Sources/UTI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 			children = (
 				093441061CEE368A0046FC6C /* ImageDestination.swift */,
 				093441071CEE368A0046FC6C /* ImageSource.swift */,
+				094D2F2C1CF0555200307068 /* UTI.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 			files = (
 				093441091CEE368A0046FC6C /* ImageSource.swift in Sources */,
 				093441081CEE368A0046FC6C /* ImageDestination.swift in Sources */,
+				094D2F2D1CF0555200307068 /* UTI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +497,7 @@
 			files = (
 				0934412E1CEE3A2B0046FC6C /* ImageSource.swift in Sources */,
 				0934412D1CEE3A2B0046FC6C /* ImageDestination.swift in Sources */,
+				094D2F2E1CF0555500307068 /* UTI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +515,7 @@
 			files = (
 				093441531CEE3AA60046FC6C /* ImageSource.swift in Sources */,
 				093441521CEE3AA60046FC6C /* ImageDestination.swift in Sources */,
+				094D2F2F1CF0555600307068 /* UTI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,6 +865,7 @@
 				093441281CEE39930046FC6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		093441291CEE39930046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -865,6 +874,7 @@
 				0934412B1CEE39930046FC6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		093441481CEE3A770046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_macOS" */ = {
 			isa = XCConfigurationList;
@@ -873,6 +883,7 @@
 				0934414A1CEE3A770046FC6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0934414B1CEE3A770046FC6C /* Build configuration list for PBXNativeTarget "SwiftyImageIO_macOSTests" */ = {
 			isa = XCConfigurationList;
@@ -881,6 +892,7 @@
 				0934414D1CEE3A770046FC6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -24,7 +24,7 @@ class Tests: XCTestCase {
   func testSourceSupportedIdentifiers() {
     let identifiers = ImageSource.supportedUTIs()
     
-    XCTAssert(identifiers.contains("public.png"), "")
+    XCTAssert(identifiers.contains(UTI(kUTTypePNG)), "")
     
     for identifier in identifiers {
       XCTAssertTrue(ImageSource.supportsUTI(identifier))
@@ -34,7 +34,7 @@ class Tests: XCTestCase {
   func testDestinationSupportedIdentifiers() {
     let identifiers = ImageDestination.supportedUTIs()
     
-    XCTAssert(identifiers.contains("public.png"), "")
+    XCTAssert(identifiers.contains(UTI(kUTTypePNG)), "")
     
     for identifier in identifiers {
       XCTAssertTrue(ImageDestination.supportsUTI(identifier))
@@ -52,11 +52,11 @@ class Tests: XCTestCase {
   }
   
   func testPngImageSource() {
-    let imageSource = ImageSource(url: pngImageURL, options: [.TypeIdentifierHint(UTI: "public.png")])!
+    let imageSource = ImageSource(url: pngImageURL, options: [.TypeIdentifierHint(kUTTypePNG)])!
     XCTAssert(imageSource.imageCount == 1)
     XCTAssert(imageSource.status == .StatusComplete)
     XCTAssertNotNil(imageSource.createImage())
-    XCTAssert(imageSource.UTI! == "public.png")
+    XCTAssert(imageSource.UTI! == kUTTypePNG)
   }
   
   func testImageDestination() {
@@ -81,6 +81,17 @@ class Tests: XCTestCase {
     #endif
     
     XCTAssertNotNil(out_image)
+  }
+  
+  func testEquatable() {
+    let UTIPure = UTI("a")
+    let UTIPure2 = UTI("a")
+    let UTIConvertible = "a"
+    let UTIConvertible2 = "a"
+    XCTAssert(UTIPure == UTIConvertible)
+    XCTAssert(UTIConvertible == UTIPure)
+    XCTAssert(UTIConvertible == UTIConvertible2)
+    XCTAssert(UTIPure == UTIPure2)
   }
 }
 

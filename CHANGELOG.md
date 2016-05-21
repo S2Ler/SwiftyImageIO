@@ -1,7 +1,8 @@
-## 0.1.4
+## 0.2.0
 
 * Remove Swift 3.0 support
 * Add Xcode project
+* Introduce UTI type for better public API usage
 
 ## 0.1.3
 

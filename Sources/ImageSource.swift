@@ -74,7 +74,7 @@ public class ImageSource {
    - CreateThumbnailWithTransform: Whether the thumbnail should be rotated and scaled according to the orientation and pixel aspect ratio of the full image. The default value is `false`.
    */
   public enum Options {
-    case TypeIdentifierHint(UTI: String)
+    case TypeIdentifierHint(UTITypeConvertible)
     case ShouldAllowFloat(Bool)
     case ShouldCache(Bool)
     case CreateThumbnailFromImageIfAbsent(Bool)
@@ -89,7 +89,7 @@ public extension ImageSource.Options {
   public var imageIOOption: (key: String, value: AnyObject) {
     switch self {
     case .TypeIdentifierHint(let UTI):
-      return (key: kCGImageSourceTypeIdentifierHint as String, value: UTI)
+      return (key: kCGImageSourceTypeIdentifierHint as String, value: UTI.UTI.cfType)
     case .ShouldAllowFloat(let allow):
       return (key: kCGImageSourceShouldAllowFloat as String, value: allow)
     case .ShouldCache(let shouldCache):
@@ -126,14 +126,14 @@ public final class IncrementalImageSource: ImageSource {
 public extension ImageSource {
   /// Returns an array of the UTIs that are supported for image sources.
   /// - seealso: `CGImageSourceCopyTypeIdentifiers`
-  public static func supportedUTIs() -> [String] {
-    let identifiers = CGImageSourceCopyTypeIdentifiers() as [AnyObject] as! [String]
-    return identifiers
+  public static func supportedUTIs() -> [SwiftyImageIO.UTI] {
+    let identifiers = CGImageSourceCopyTypeIdentifiers() as [AnyObject] as! [CFString]
+    return identifiers.map { SwiftyImageIO.UTI($0) }
   }
   
   /// Returns whether ImageSource supports provided s`UTI`
-  public static func supportsUTI(UTI: String) -> Bool {
-    return supportedUTIs().contains(UTI)
+  public static func supportsUTI(UTI: UTITypeConvertible) -> Bool {
+    return supportedUTIs().contains(UTI.UTI)
   }
 }
 
@@ -211,8 +211,13 @@ public extension IncrementalImageSource {
 public extension ImageSource {
   /// The uniform type identifier of the source container.
   /// - seealso: `CGImageSourceGetType`
-  public var UTI: String? {
-    return CGImageSourceGetType(imageSource) as String?
+  public var UTI: SwiftyImageIO.UTI? {
+    if let type =  CGImageSourceGetType(imageSource) {
+      return SwiftyImageIO.UTI(type)
+    }
+    else {
+      return nil
+    }
   }
   
   /// Returns the Core Foundation type ID for the image source.
