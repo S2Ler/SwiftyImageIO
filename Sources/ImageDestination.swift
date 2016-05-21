@@ -18,8 +18,8 @@ public final class ImageDestination {
     self.imageDestination = imageDestination
   }
 
-  public init?(dataConsumer: CGDataConsumer, imageType: CFString, imageCount: Int, options: [Property]? = nil) {
-    guard let imageDestination = CGImageDestinationCreateWithDataConsumer(dataConsumer, imageType, imageCount, options?.rawProperties())
+  public init?(dataConsumer: CGDataConsumer, imageType: UTITypeConvertible, imageCount: Int, options: [Property]? = nil) {
+    guard let imageDestination = CGImageDestinationCreateWithDataConsumer(dataConsumer, imageType.UTI.cfType, imageCount, options?.rawProperties())
       else { return nil }
     self.imageDestination = imageDestination
   }
