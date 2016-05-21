@@ -77,8 +77,7 @@ public extension ImageDestination {
 //MARK: - Getting Type Identifiers
 public extension ImageDestination {
   public static func supportedUTIs() -> [SwiftyImageIO.UTI] {
-    let identifiers = CGImageDestinationCopyTypeIdentifiers() as [AnyObject] as! [CFString]
-    return identifiers.map { SwiftyImageIO.UTI($0) }
+    return CGImageDestinationCopyTypeIdentifiers().convertToUTIs()
   }
   
   public static func supportsUTI(UTI: UTITypeConvertible) -> Bool {

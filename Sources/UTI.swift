@@ -81,3 +81,15 @@ public func ==(lhs: UTI, rhs: UTITypeConvertible) -> Bool {
 public func ==(lhs: UTITypeConvertible, rhs: UTI) -> Bool {
   return CFStringCompare(lhs.UTI.cfType, rhs.cfType, CFStringCompareFlags()) == .CompareEqualTo
 }
+
+//MARK: - CFArray
+extension CFArray {
+  func convertToUTIs() -> [UTI] {
+    if let identifiers = CGImageDestinationCopyTypeIdentifiers() as [AnyObject] as? [CFString] {
+      return identifiers.map { SwiftyImageIO.UTI($0) }
+    }
+    else {
+      return []
+    }
+  }
+}

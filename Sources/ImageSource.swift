@@ -127,8 +127,7 @@ public extension ImageSource {
   /// Returns an array of the UTIs that are supported for image sources.
   /// - seealso: `CGImageSourceCopyTypeIdentifiers`
   public static func supportedUTIs() -> [SwiftyImageIO.UTI] {
-    let identifiers = CGImageSourceCopyTypeIdentifiers() as [AnyObject] as! [CFString]
-    return identifiers.map { SwiftyImageIO.UTI($0) }
+    return CGImageSourceCopyTypeIdentifiers().convertToUTIs()
   }
   
   /// Returns whether ImageSource supports provided s`UTI`
