@@ -33,7 +33,7 @@ let thumbnailCGImage = source?.createThumbnail(size: thumbnailSize)
 import SwiftyImageIO
 import MobileCoreServices
 
-if let imageDestination = ImageDestination(url: saveURL, UTI: kUTTypeJPEG as String, imageCount: 1) {
+if let imageDestination = ImageDestination(url: saveURL, UTI: kUTTypeJPEG, imageCount: 1) {
   imageDestination.addImage(cgImage)
   let imageSaved = imageDestination.finalize()
 }
