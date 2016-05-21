@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ImageIO
 
 //MARK: - UTI
 public struct UTI {
