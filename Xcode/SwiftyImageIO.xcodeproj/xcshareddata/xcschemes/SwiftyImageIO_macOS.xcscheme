@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "093441361CEE3A770046FC6C"
-               BuildableName = "SwiftyImageIO_macOS.framework"
+               BuildableName = "SwiftyImageIO.framework"
                BlueprintName = "SwiftyImageIO_macOS"
                ReferencedContainer = "container:SwiftyImageIO.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "093441361CEE3A770046FC6C"
-            BuildableName = "SwiftyImageIO_macOS.framework"
+            BuildableName = "SwiftyImageIO.framework"
             BlueprintName = "SwiftyImageIO_macOS"
             ReferencedContainer = "container:SwiftyImageIO.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "093441361CEE3A770046FC6C"
-            BuildableName = "SwiftyImageIO_macOS.framework"
+            BuildableName = "SwiftyImageIO.framework"
             BlueprintName = "SwiftyImageIO_macOS"
             ReferencedContainer = "container:SwiftyImageIO.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "093441361CEE3A770046FC6C"
-            BuildableName = "SwiftyImageIO_macOS.framework"
+            BuildableName = "SwiftyImageIO.framework"
             BlueprintName = "SwiftyImageIO_macOS"
             ReferencedContainer = "container:SwiftyImageIO.xcodeproj">
          </BuildableReference>

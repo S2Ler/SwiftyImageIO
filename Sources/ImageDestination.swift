@@ -5,19 +5,20 @@ import ImageIO
 
 public final class ImageDestination {
   let imageDestination: CGImageDestination
-  public init?(data: NSMutableData, UTI: String, imageCount: Int) {
-    guard let imageDestination = CGImageDestinationCreateWithData(data as CFMutableData, UTI as CFString, imageCount, nil)
+  
+  public init?(data: NSMutableData, UTI: CFString, imageCount: Int) {
+    guard let imageDestination = CGImageDestinationCreateWithData(data as CFMutableData, UTI, imageCount, nil)
       else { return nil }
     self.imageDestination = imageDestination
   }
   
-  public init?(url: NSURL, UTI: String, imageCount: Int) {
-    guard let imageDestination = CGImageDestinationCreateWithURL(url as CFURL, UTI as CFString, imageCount, nil)
+  public init?(url: NSURL, UTI: CFString, imageCount: Int) {
+    guard let imageDestination = CGImageDestinationCreateWithURL(url as CFURL, UTI, imageCount, nil)
       else { return nil }
     self.imageDestination = imageDestination
   }
-  
-  public init?(dataConsumer: CGDataConsumer, imageType: String, imageCount: Int, options: [Property]? = nil) {
+
+  public init?(dataConsumer: CGDataConsumer, imageType: CFString, imageCount: Int, options: [Property]? = nil) {
     guard let imageDestination = CGImageDestinationCreateWithDataConsumer(dataConsumer, imageType, imageCount, options?.rawProperties())
       else { return nil }
     self.imageDestination = imageDestination
@@ -29,6 +30,20 @@ public final class ImageDestination {
     case LosslessCompressionQuality
     case BackgroundColor(CGColor)
     case ImageProperty(key: String, value: AnyObject)
+  }
+}
+
+public extension ImageDestination {
+  public convenience init?(data: NSMutableData, UTI: String, imageCount: Int) {
+    self.init(data: data, UTI: UTI as CFString, imageCount: imageCount)
+  }
+  
+  public convenience init?(url: NSURL, UTI: String, imageCount: Int) {
+    self.init(url: url, UTI: UTI as CFString, imageCount: imageCount)
+  }
+  
+  public convenience init?(dataConsumer: CGDataConsumer, imageType: String, imageCount: Int, options: [Property]? = nil) {
+    self.init(dataConsumer: dataConsumer, imageType: imageType as CFString, imageCount: imageCount, options: options);
   }
 }
 

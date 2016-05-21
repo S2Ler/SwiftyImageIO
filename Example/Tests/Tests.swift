@@ -5,6 +5,9 @@
 #endif
 import XCTest
 import SwiftyImageIO
+#if !os(OSX)
+  import MobileCoreServices
+#endif
 
 class Tests: XCTestCase {
   
@@ -58,7 +61,8 @@ class Tests: XCTestCase {
   
   func testImageDestination() {
     let data = NSMutableData()
-    guard let destination = ImageDestination(data: data, UTI: "public.png", imageCount: 1)
+
+    guard let destination = ImageDestination(data: data, UTI: kUTTypePNG, imageCount: 1)
       else { XCTAssert(false); return }
     #if os(OSX)
       let image = NSImage(contentsOfFile: pngImageURL.path!)!
