@@ -1,6 +1,6 @@
 {
   "name": "SwiftyImageIO",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "summary": "A swift wrapper around ImageIO framework",
   "description": "Provides an easy interface to ImageIO framework.",
   "homepage": "https://github.com/diejmon/SwiftyImageIO",
@@ -10,11 +10,12 @@
   },
   "source": {
     "git": "https://github.com/diejmon/SwiftyImageIO.git",
-    "tag": "0.1.1"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0",
-    "osx": "10.9"
+    "osx": "10.9",
+    "tvos": "9.0"
   },
   "requires_arc": true,
   "source_files": "Sources/**/*",
