@@ -44,7 +44,7 @@ class Tests: XCTestCase {
   func testGifImageSource() {
     let imageSource = ImageSource(url: gifImageURL, options: nil)!
     XCTAssert(imageSource.imageCount == 120)
-    XCTAssert(imageSource.status == .StatusComplete)
+    XCTAssert(imageSource.status == .statusComplete)
     for imageIndex in (0..<imageSource.imageCount) {
       XCTAssertNotNil(imageSource.createImage(atIndex: imageIndex, options: nil))
     }
@@ -52,9 +52,9 @@ class Tests: XCTestCase {
   }
   
   func testPngImageSource() {
-    let imageSource = ImageSource(url: pngImageURL, options: [.TypeIdentifierHint(kUTTypePNG)])!
+    let imageSource = ImageSource(url: pngImageURL, options: [.typeIdentifierHint(kUTTypePNG)])!
     XCTAssert(imageSource.imageCount == 1)
-    XCTAssert(imageSource.status == .StatusComplete)
+    XCTAssert(imageSource.status == .statusComplete)
     XCTAssertNotNil(imageSource.createImage())
     XCTAssert(imageSource.UTI! == kUTTypePNG)
   }
@@ -69,7 +69,7 @@ class Tests: XCTestCase {
       var imageRect:CGRect = CGRectMake(0, 0, image.size.width, image.size.height)
       let cgimage = image.CGImageForProposedRect(&imageRect, context: nil, hints: nil)!
     #else
-      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path!)!.CGImage!
+      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path!)!.cgImage!
     #endif
     
     destination.addImage(cgimage)
@@ -77,7 +77,7 @@ class Tests: XCTestCase {
     #if os(OSX)
       let out_image = NSImage(data: data)
     #else
-      let out_image = UIImage(data: data)
+      let out_image = UIImage(data: data as Data)
     #endif
     
     XCTAssertNotNil(out_image)
@@ -96,18 +96,18 @@ class Tests: XCTestCase {
 }
 
 extension Tests {
-  private var pngImageURL: NSURL {
-    let bundle = NSBundle(forClass: self.dynamicType)
-    return bundle.URLForResource("sample", withExtension: "png")!
+  private var pngImageURL: URL {
+    let bundle = Bundle(for: self.dynamicType)
+    return bundle.urlForResource("sample", withExtension: "png")!
   }
   
-  private var gifImageURL: NSURL {
-    let bundle = NSBundle(forClass: self.dynamicType)
-    return bundle.URLForResource("gifSample", withExtension: "gif")!
+  private var gifImageURL: URL {
+    let bundle = Bundle(for: self.dynamicType)
+    return bundle.urlForResource("gifSample", withExtension: "gif")!
   }
   
   private var jpgImageURL: NSURL {
-    let bundle = NSBundle(forClass: self.dynamicType)
-    return bundle.URLForResource("cameraSample", withExtension: "jpg")!
+    let bundle = Bundle(for: self.dynamicType)
+    return bundle.urlForResource("cameraSample", withExtension: "jpg")!
   }
 }

@@ -12,7 +12,7 @@ public final class ImageDestination {
     self.imageDestination = imageDestination
   }
   
-  public init?(url: NSURL, UTI: UTITypeConvertible, imageCount: Int) {
+  public init?(url: URL, UTI: UTITypeConvertible, imageCount: Int) {
     guard let imageDestination = CGImageDestinationCreateWithURL(url as CFURL, UTI.UTI.cfType, imageCount, nil)
       else { return nil }
     self.imageDestination = imageDestination
@@ -25,33 +25,33 @@ public final class ImageDestination {
   }
   
   public enum Property {
-    case LossyCompressionQuality(Double)
-    case MaximumCompressionQuality
-    case LosslessCompressionQuality
-    case BackgroundColor(CGColor)
-    case ImageProperty(key: String, value: AnyObject)
+    case lossyCompressionQuality(Double)
+    case maximumCompressionQuality
+    case losslessCompressionQuality
+    case backgroundColor(CGColor)
+    case imageProperty(key: String, value: AnyObject)
   }
 }
 
 public extension ImageDestination.Property {
   public var imageIOProperty: (key: String, value: AnyObject) {
     switch self {
-    case .LossyCompressionQuality(let quality):
+    case .lossyCompressionQuality(let quality):
       return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality)
-    case .MaximumCompressionQuality:
+    case .maximumCompressionQuality:
       return (key: kCGImageDestinationLossyCompressionQuality as String, value: 0.0)
-    case .LosslessCompressionQuality:
+    case .losslessCompressionQuality:
       return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0)
-    case .BackgroundColor(let color):
+    case .backgroundColor(let color):
       return (key: kCGImageDestinationBackgroundColor as String, value: color)
-    case .ImageProperty(let key, let value):
+    case .imageProperty(let key, let value):
       return (key: key, value: value)
     }
   }
 }
 
 
-public extension SequenceType where Generator.Element == ImageDestination.Property {
+public extension Sequence where Iterator.Element == ImageDestination.Property {
   func rawProperties() -> CFDictionary {
     var dictionary: [String: AnyObject] = [:]
     for property in self {
@@ -65,7 +65,7 @@ public extension SequenceType where Generator.Element == ImageDestination.Proper
 
 //MARK: - Adding Images
 public extension ImageDestination {
-  public func addImage(image: CGImage, properties: [Property]? = nil) {
+  public func addImage(_ image: CGImage, properties: [Property]? = nil) {
     CGImageDestinationAddImage(imageDestination, image, properties?.rawProperties())
   }
   
@@ -80,7 +80,7 @@ public extension ImageDestination {
     return CGImageDestinationCopyTypeIdentifiers().convertToUTIs()
   }
   
-  public static func supportsUTI(UTI: UTITypeConvertible) -> Bool {
+  public static func supportsUTI(_ UTI: UTITypeConvertible) -> Bool {
     return supportedUTIs().contains(UTI.UTI)
   }
   
@@ -91,7 +91,7 @@ public extension ImageDestination {
 
 //MARK: - Settings Properties
 public extension ImageDestination {
-  public func setProperties(properties: [Property]?) {
+  public func setProperties(_ properties: [Property]?) {
     CGImageDestinationSetProperties(imageDestination, properties?.rawProperties())
   }
 }

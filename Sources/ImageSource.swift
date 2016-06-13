@@ -19,7 +19,7 @@ public class ImageSource {
    - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
    - seealso: `CGImageSourceCreateWithURL`
    */
-  public init?(url: NSURL, options: [Options]?) {
+  public init?(url: URL, options: [Options]?) {
     guard let imageSource = CGImageSourceCreateWithURL(url as CFURL, options?.rawOptions()) else { return nil }
     self.imageSource = imageSource
   }
@@ -33,7 +33,7 @@ public class ImageSource {
    - returns: An `ImageSource` or nil, if `ImageSource` cannot be created for whatever reason.
    - seealso: `CGImageSourceCreateWithData`
    */
-  public init?(data: NSData, options: [Options]?) {
+  public init?(data: Data, options: [Options]?) {
     guard let imageSource = CGImageSourceCreateWithData(data as CFData, options?.rawOptions()) else { return nil }
     self.imageSource = imageSource
   }
@@ -74,13 +74,13 @@ public class ImageSource {
    - CreateThumbnailWithTransform: Whether the thumbnail should be rotated and scaled according to the orientation and pixel aspect ratio of the full image. The default value is `false`.
    */
   public enum Options {
-    case TypeIdentifierHint(UTITypeConvertible)
-    case ShouldAllowFloat(Bool)
-    case ShouldCache(Bool)
-    case CreateThumbnailFromImageIfAbsent(Bool)
-    case CreateThumbnailFromImageAlways(Bool)
-    case ThumbnailMaxPixelSize(Int)
-    case CreateThumbnailWithTransform(Bool)
+    case typeIdentifierHint(UTITypeConvertible)
+    case shouldAllowFloat(Bool)
+    case shouldCache(Bool)
+    case createThumbnailFromImageIfAbsent(Bool)
+    case createThumbnailFromImageAlways(Bool)
+    case thumbnailMaxPixelSize(Int)
+    case createThumbnailWithTransform(Bool)
   }
 }
 
@@ -88,25 +88,25 @@ public extension ImageSource.Options {
   /// Converts ImageSource.Options to ImageIO key/value options
   public var imageIOOption: (key: String, value: AnyObject) {
     switch self {
-    case .TypeIdentifierHint(let UTI):
+    case .typeIdentifierHint(let UTI):
       return (key: kCGImageSourceTypeIdentifierHint as String, value: UTI.UTI.cfType)
-    case .ShouldAllowFloat(let allow):
+    case .shouldAllowFloat(let allow):
       return (key: kCGImageSourceShouldAllowFloat as String, value: allow)
-    case .ShouldCache(let shouldCache):
+    case .shouldCache(let shouldCache):
       return (key: kCGImageSourceShouldCache as String, value: shouldCache)
-    case .CreateThumbnailFromImageIfAbsent(let createThumbnail):
+    case .createThumbnailFromImageIfAbsent(let createThumbnail):
       return (key: kCGImageSourceCreateThumbnailFromImageIfAbsent as String, value: createThumbnail)
-    case .CreateThumbnailFromImageAlways(let createThumbnail):
+    case .createThumbnailFromImageAlways(let createThumbnail):
       return (key: kCGImageSourceCreateThumbnailFromImageAlways as String, value: createThumbnail)
-    case .ThumbnailMaxPixelSize(let size):
+    case .thumbnailMaxPixelSize(let size):
       return (key: kCGImageSourceThumbnailMaxPixelSize as String, value: size)
-    case .CreateThumbnailWithTransform(let createWithTransform):
+    case .createThumbnailWithTransform(let createWithTransform):
       return (key: kCGImageSourceCreateThumbnailWithTransform as String, value: createWithTransform)
     }
   }
 }
 
-public extension SequenceType where Generator.Element == ImageSource.Options {
+public extension Sequence where Iterator.Element == ImageSource.Options {
   /// Converts array of ImageSource.Options to ImageIO dictionary of options
   func rawOptions() -> CFDictionary {
     var dictionary: [String: AnyObject] = [:]
@@ -131,7 +131,7 @@ public extension ImageSource {
   }
   
   /// Returns whether ImageSource supports provided s`UTI`
-  public static func supportsUTI(UTI: UTITypeConvertible) -> Bool {
+  public static func supportsUTI(_ UTI: UTITypeConvertible) -> Bool {
     return supportedUTIs().contains(UTI.UTI)
   }
 }
@@ -173,7 +173,7 @@ public extension ImageSource {
    - returns: Returns an image source object.
    - seealso: `CGImageSourceCreateIncremental`
    */
-  public static func createIncremental(options options: [Options]? = nil) -> IncrementalImageSource {
+  public static func createIncremental(options: [Options]? = nil) -> IncrementalImageSource {
     return IncrementalImageSource(imageSource: CGImageSourceCreateIncremental(options?.rawOptions()))
   }
 }
@@ -189,16 +189,16 @@ public extension ImageSource {
    
    - returns: CGImage object
    */
-  public func createThumbnail(size size: Int) -> CGImage? {
+  public func createThumbnail(size: Int) -> CGImage? {
     return createThumbnail(atIndex: 0,
-                           options: [.ThumbnailMaxPixelSize(size),
-                            .CreateThumbnailFromImageAlways(true)])
+                           options: [.thumbnailMaxPixelSize(size),
+                            .createThumbnailFromImageAlways(true)])
   }
 }
 
 //MARK: - Updating an Image Source
 public extension IncrementalImageSource {
-  public func update(data data: NSData, isFinal: Bool) {
+  public func update(data: Data, isFinal: Bool) {
     CGImageSourceUpdateData(imageSource, data as CFData, isFinal)
   }
   
@@ -250,7 +250,7 @@ public extension ImageSource {
    - seealso: `CGImageSourceCopyProperties`
    - seealso: [CGImageProperties Reference](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGImageProperties_Reference/) for a list of properties that can be in the dictionary.
    */
-  public func properties(options: [Options]? = nil) -> [String: AnyObject]? {
+  public func properties(_ options: [Options]? = nil) -> [String: AnyObject]? {
     guard let rawProperties = CGImageSourceCopyProperties(imageSource, options?.rawOptions()) else { return nil }
     return (rawProperties as NSDictionary) as? [String: AnyObject]
   }
