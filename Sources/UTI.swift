@@ -8,6 +8,9 @@
 
 import Foundation
 import ImageIO
+#if !os(OSX)
+  import MobileCoreServices
+#endif
 
 //MARK: - UTI
 public struct UTI {
@@ -19,6 +22,16 @@ public struct UTI {
   
   public init(_ type: String) {
     self.cfType = type as CFString
+  }
+  
+  public var fileExtension: String? {
+    let fileExtension = UTTypeCopyPreferredTagWithClass(cfType, kUTTagClassFilenameExtension);
+    if let ext = fileExtension?.takeRetainedValue() {
+      return ext as String
+    }
+    else {
+      return nil
+    }
   }
 }
 
