@@ -66,8 +66,8 @@ class Tests: XCTestCase {
       else { XCTAssert(false); return }
     #if os(OSX)
       let image = NSImage(contentsOfFile: pngImageURL.path!)!
-      var imageRect:CGRect = CGRectMake(0, 0, image.size.width, image.size.height)
-      let cgimage = image.CGImageForProposedRect(&imageRect, context: nil, hints: nil)!
+      var imageRect:CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+      let cgimage = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)!
     #else
       let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path!)!.cgImage!
     #endif
@@ -75,7 +75,7 @@ class Tests: XCTestCase {
     destination.addImage(cgimage)
     XCTAssertTrue(destination.finalize())
     #if os(OSX)
-      let out_image = NSImage(data: data)
+      let out_image = NSImage(data: data as Data)
     #else
       let out_image = UIImage(data: data as Data)
     #endif
@@ -106,7 +106,7 @@ extension Tests {
     return bundle.urlForResource("gifSample", withExtension: "gif")!
   }
   
-  private var jpgImageURL: NSURL {
+  private var jpgImageURL: URL {
     let bundle = Bundle(for: self.dynamicType)
     return bundle.urlForResource("cameraSample", withExtension: "jpg")!
   }
