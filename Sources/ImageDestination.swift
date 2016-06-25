@@ -33,8 +33,8 @@ public final class ImageDestination {
   }
 }
 
-public extension ImageDestination.Property {
-  public var imageIOProperty: (key: String, value: AnyObject) {
+extension ImageDestination.Property: Property {
+  public var imageIOOption: (key: String, value: AnyObject) {
     switch self {
     case .lossyCompressionQuality(let quality):
       return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality)
@@ -47,19 +47,6 @@ public extension ImageDestination.Property {
     case .imageProperty(let key, let value):
       return (key: key, value: value)
     }
-  }
-}
-
-
-public extension Sequence where Iterator.Element == ImageDestination.Property {
-  func rawProperties() -> CFDictionary {
-    var dictionary: [String: AnyObject] = [:]
-    for property in self {
-      let (key, value) = property.imageIOProperty
-      dictionary[key] = value
-    }
-    
-    return dictionary as CFDictionary
   }
 }
 
