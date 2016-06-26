@@ -29,7 +29,7 @@ public final class ImageDestination {
     case maximumCompressionQuality
     case losslessCompressionQuality
     case backgroundColor(CGColor)
-    case imageProperty(key: String, value: AnyObject)
+    case imageProperties(ImageProperties)
   }
 }
 
@@ -44,8 +44,9 @@ extension ImageDestination.Property: Property {
       return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0)
     case .backgroundColor(let color):
       return (key: kCGImageDestinationBackgroundColor as String, value: color)
-    case .imageProperty(let key, let value):
-      return (key: key, value: value)
+    case .imageProperties(let imageProperties):
+      
+      return (key: imageProperties.propertiesKey, value: imageProperties.rawProperties())
     }
   }
 }
