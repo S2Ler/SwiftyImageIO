@@ -49,7 +49,7 @@ public extension Sequence where Iterator.Element: Property {
 }
 
 public extension Sequence where Iterator.Element: ImageProperty {
-  public func rawProperties() -> CFDictionary {
+  public func rawImageProperties() -> CFDictionary {
     let innerProperties = rawProperties()
     let outterProperties: [String: CFDictionary] = [Iterator.Element.key: innerProperties]
     return outterProperties as CFDictionary

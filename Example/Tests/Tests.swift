@@ -8,6 +8,7 @@ import SwiftyImageIO
 #if !os(OSX)
   import MobileCoreServices
 #endif
+import Foundation
 
 class Tests: XCTestCase {
   
@@ -93,7 +94,24 @@ class Tests: XCTestCase {
     XCTAssert(UTIConvertible == UTIConvertible2)
     XCTAssert(UTIPure == UTIPure2)
   }
+  
+  func testMakeGIF() {
+    let savePath = makeSavePath(fileExt: "gif")
+    do {
+      let gifMaker = GIF()
+      try gifMaker.makeGIF(fromAnimatedImage: sampleAnimatedImage,
+                           writeTo: savePath,
+                           gifProperties: [.DelayTime(0.1), .LoopCount(1)])
+      XCTAssert(FileManager.default().fileExists(atPath: savePath))
+      let gifSource = ImageSource(data: try! Data(contentsOf: URL(fileURLWithPath: savePath)), options: nil)
+      XCTAssert(gifSource!.UTI! == kUTTypeGIF)
+    }
+    catch {
+      print(error)
+    }
+  }
 }
+
 
 extension Tests {
   private var pngImageURL: URL {
@@ -109,5 +127,18 @@ extension Tests {
   private var jpgImageURL: URL {
     let bundle = Bundle(for: self.dynamicType)
     return bundle.urlForResource("cameraSample", withExtension: "jpg")!
+  }
+  
+  private var sampleAnimatedImage: UIImage {
+    var images = Array<UIImage>()
+    for i in 0...10 {
+      images.append(UIImage(named: "giphy\(i)", in: Bundle(for: Tests.self), compatibleWith: nil)!)
+    }
+    return UIImage.animatedImage(with: images, duration: 1)!
+  }
+  
+  func makeSavePath(fileExt: String) -> String {
+    return (FileManager.default().urlsForDirectory(.cachesDirectory,
+                                           inDomains: .userDomainMask).first!.path! as NSString!).appendingPathComponent("\(UUID().uuidString).\(fileExt)")
   }
 }
