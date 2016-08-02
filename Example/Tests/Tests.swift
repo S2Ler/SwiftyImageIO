@@ -94,15 +94,15 @@ class Tests: XCTestCase {
     XCTAssert(UTIConvertible == UTIConvertible2)
     XCTAssert(UTIPure == UTIPure2)
   }
-  
+  #if !os(OSX)
   func testMakeGIF() {
     let savePath = makeSavePath(fileExt: "gif")
     do {
       let gifMaker = GIF()
       try gifMaker.makeGIF(fromAnimatedImage: sampleAnimatedImage,
                            writeTo: savePath,
-                           gifProperties: [.DelayTime(0.1), .LoopCount(1)])
-      XCTAssert(FileManager.default().fileExists(atPath: savePath))
+                           gifProperties: [.delayTime(0.1), .loopCount(1)])
+      XCTAssert(FileManager.default.fileExists(atPath: savePath))
       let gifSource = ImageSource(data: try! Data(contentsOf: URL(fileURLWithPath: savePath)), options: nil)
       XCTAssert(gifSource!.UTI! == kUTTypeGIF)
     }
@@ -110,6 +110,7 @@ class Tests: XCTestCase {
       print(error)
     }
   }
+  #endif
 }
 
 
@@ -128,7 +129,7 @@ extension Tests {
     let bundle = Bundle(for: self.dynamicType)
     return bundle.urlForResource("cameraSample", withExtension: "jpg")!
   }
-  
+  #if !os(OSX)
   private var sampleAnimatedImage: UIImage {
     var images = Array<UIImage>()
     for i in 0...10 {
@@ -136,9 +137,10 @@ extension Tests {
     }
     return UIImage.animatedImage(with: images, duration: 1)!
   }
+  #endif
   
   func makeSavePath(fileExt: String) -> String {
-    return (FileManager.default().urlsForDirectory(.cachesDirectory,
+    return (FileManager.default.urlsForDirectory(.cachesDirectory,
                                            inDomains: .userDomainMask).first!.path! as NSString!).appendingPathComponent("\(UUID().uuidString).\(fileExt)")
   }
 }

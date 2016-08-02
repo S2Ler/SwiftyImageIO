@@ -6,9 +6,9 @@
 //  Copyright © 2016 Alexander Belyavskiy. All rights reserved.
 //
 
+#if !os(OSX)
 import Foundation
 import UIKit
-#if !os(OSX)
   import MobileCoreServices
 import ImageIO
 
@@ -19,18 +19,18 @@ import ImageIO
     /// - NotAnimatedImage: target image isn't animated image
     /// - InvalidImage:     images do not have cgImage propery. CIImage backed UIImage not supported. Convert to CGImage first
     public enum MakeGIFError: ErrorProtocol {
-      case InvalidPath
-      case NotAnimatedImage
-      case InvalidImage
-      case ImageIOError
+      case invalidPath
+      case notAnimatedImage
+      case invalidImage
+      case imageIOError
     }
     
     public enum Property {
-      case LoopCount(Int)
-      case DelayTime(TimeInterval)
-      case ImageColorMap(Data)//TODO: Wrap color maps
-      case HasGlobalColorMap(Bool)
-      case UnclampedDelayTime(TimeInterval)
+      case loopCount(Int)
+      case delayTime(TimeInterval)
+      case imageColorMap(Data)//TODO: Wrap color maps
+      case hasGlobalColorMap(Bool)
+      case unclampedDelayTime(TimeInterval)
     }
     
     public init() {
@@ -41,14 +41,14 @@ import ImageIO
                         writeTo path: String,
                         gifProperties: [GIF.Property]? = nil) throws {
       guard let images = animatedImage.images else {
-        throw MakeGIFError.NotAnimatedImage
+        throw MakeGIFError.notAnimatedImage
       }
       
       guard let imageDestination = ImageDestination(url: URL(fileURLWithPath: path),
                                                     UTI: UTI(kUTTypeGIF),
                                                     imageCount: images.count)
         else {
-          throw MakeGIFError.InvalidPath
+          throw MakeGIFError.invalidPath
       }
       
       let gifFrameProperties: [ImageDestination.Property]?
@@ -63,7 +63,7 @@ import ImageIO
       
       for image in images {
         guard let cgImage = image.cgImage else {
-          throw MakeGIFError.InvalidImage
+          throw MakeGIFError.invalidImage
         }
         imageDestination.addImage(cgImage, properties: gifFrameProperties)
       }
@@ -71,23 +71,23 @@ import ImageIO
       let gifSaved = imageDestination.finalize()
       
       guard gifSaved else {
-        throw MakeGIFError.ImageIOError
+        throw MakeGIFError.imageIOError
       }
-    }
+    }    
   }
   
   extension GIF.Property: ImageProperty {
     public var imageIOOption: (key: String, value: AnyObject) {
       switch self {
-      case .LoopCount(let count):
+      case .loopCount(let count):
         return (key: kCGImagePropertyGIFLoopCount as String, value: count)
-      case .DelayTime(let delayTime):
+      case .delayTime(let delayTime):
         return (key: kCGImagePropertyGIFDelayTime as String, value: delayTime)
-      case .ImageColorMap(let colorMap):
+      case .imageColorMap(let colorMap):
         return (key: kCGImagePropertyGIFImageColorMap as String, value: colorMap)
-      case .HasGlobalColorMap(let flag):
+      case .hasGlobalColorMap(let flag):
         return (key: kCGImagePropertyGIFHasGlobalColorMap as String, value: flag)
-      case .UnclampedDelayTime(let delay):
+      case .unclampedDelayTime(let delay):
         return (key: kCGImagePropertyGIFUnclampedDelayTime as String, value: delay)
       }
     }
@@ -100,9 +100,9 @@ import ImageIO
   public extension GIF.Property {
     var isFileScopeProperty: Bool {
       switch self {
-      case .LoopCount:
+      case .loopCount:
         fallthrough
-      case .HasGlobalColorMap:
+      case .hasGlobalColorMap:
         return true
       default:
         return false
