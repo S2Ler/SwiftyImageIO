@@ -57,7 +57,7 @@ public extension ImageDestination {
     CGImageDestinationAddImage(imageDestination, image, properties?.rawProperties())
   }
   
-  public func addImage(fromSource source: ImageSource, sourceImageIndex: Int, properties: [Property]? = nil) {
+  public func addImage(from source: ImageSource, sourceImageIndex: Int, properties: [Property]? = nil) {
     CGImageDestinationAddImageFromSource(imageDestination, source.imageSource, sourceImageIndex, properties?.rawProperties())
   }
 }

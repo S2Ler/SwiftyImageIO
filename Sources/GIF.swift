@@ -7,18 +7,18 @@
 //
 
 #if !os(OSX)
-import Foundation
-import UIKit
+  import Foundation
+  import UIKit
   import MobileCoreServices
-import ImageIO
-
+  import ImageIO
+  
   public final class GIF {
     /// Errors for UIImage.makeGIF(atPath:)
     ///
     /// - InvalidPath:      path parameter is incorrect file path
     /// - NotAnimatedImage: target image isn't animated image
     /// - InvalidImage:     images do not have cgImage propery. CIImage backed UIImage not supported. Convert to CGImage first
-    public enum MakeGIFError: Error {
+    public enum MakeError: Error {
       case invalidPath
       case notAnimatedImage
       case invalidImage
@@ -39,39 +39,39 @@ import ImageIO
     
     public func makeGIF(fromAnimatedImage animatedImage: UIImage,
                         writeTo path: String,
-                        gifProperties: [GIF.Property]? = nil) throws {
+                        properties: [GIF.Property]? = nil) throws {
       guard let images = animatedImage.images else {
-        throw MakeGIFError.notAnimatedImage
+        throw MakeError.notAnimatedImage
       }
       
       guard let imageDestination = ImageDestination(url: URL(fileURLWithPath: path),
                                                     UTI: UTI(kUTTypeGIF),
                                                     imageCount: images.count)
         else {
-          throw MakeGIFError.invalidPath
+          throw MakeError.invalidPath
       }
       
-      let gifFrameProperties: [ImageDestination.Property]?
+      let frameProperties: [ImageDestination.Property]?
       
-      if let gifProperties = gifProperties {
-        imageDestination.setProperties([.imageProperties(ImageProperties(gifProperties))])
-        gifFrameProperties = [.imageProperties(ImageProperties(gifProperties.gifFrameProperties()))]
+      if let properties = properties {
+        imageDestination.setProperties([.imageProperties(ImageProperties(properties))])
+        frameProperties = [.imageProperties(ImageProperties(properties.gifFrameProperties()))]
       }
       else {
-        gifFrameProperties = nil
+        frameProperties = nil
       }
       
       for image in images {
         guard let cgImage = image.cgImage else {
-          throw MakeGIFError.invalidImage
+          throw MakeError.invalidImage
         }
-        imageDestination.addImage(cgImage, properties: gifFrameProperties)
+        imageDestination.addImage(cgImage, properties: frameProperties)
       }
       
       let gifSaved = imageDestination.finalize()
       
       guard gifSaved else {
-        throw MakeGIFError.imageIOError
+        throw MakeError.imageIOError
       }
     }    
   }

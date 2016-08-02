@@ -160,7 +160,7 @@ public extension ImageSource {
    - returns: Returns an image source object.
    - seealso: `CGImageSourceCreateIncremental`
    */
-  public static func createIncremental(_ options: [Options]? = nil) -> IncrementalImageSource {
+  public static func makeIncremental(_ options: [Options]? = nil) -> IncrementalImageSource {
     return IncrementalImageSource(imageSource: CGImageSourceCreateIncremental(options?.rawProperties()))
   }
 }
@@ -191,7 +191,7 @@ public extension IncrementalImageSource {
   /// - parameter data:    The data to add to the image source. Each time you call the function, the data parameter must contain all of the image file data accumulated so far.
   /// - parameter isFinal: A value that specifies whether the data is the final set. Pass true if it is, false otherwise.
   /// - seealso: CGImageSourceUpdateData
-  public func update(data: Data, isFinal: Bool) {
+  public func update(with data: Data, isFinal: Bool) {
     CGImageSourceUpdateData(imageSource, data as CFData, isFinal)
   }
   
