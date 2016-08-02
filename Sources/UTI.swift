@@ -22,7 +22,7 @@ public struct UTI {
   }
 }
 
-extension UTI: StringLiteralConvertible {
+extension UTI: ExpressibleByStringLiteral {
   public init(unicodeScalarLiteral value: StringLiteralType) {
     cfType = value as CFString
   }

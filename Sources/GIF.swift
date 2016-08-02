@@ -18,7 +18,7 @@ import ImageIO
     /// - InvalidPath:      path parameter is incorrect file path
     /// - NotAnimatedImage: target image isn't animated image
     /// - InvalidImage:     images do not have cgImage propery. CIImage backed UIImage not supported. Convert to CGImage first
-    public enum MakeGIFError: ErrorProtocol {
+    public enum MakeGIFError: Error {
       case invalidPath
       case notAnimatedImage
       case invalidImage

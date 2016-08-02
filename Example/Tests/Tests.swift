@@ -70,7 +70,7 @@ class Tests: XCTestCase {
       var imageRect:CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
       let cgimage = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)!
     #else
-      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path!)!.cgImage!
+      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path)!.cgImage!
     #endif
     
     destination.addImage(cgimage)
@@ -117,17 +117,17 @@ class Tests: XCTestCase {
 extension Tests {
   private var pngImageURL: URL {
     let bundle = Bundle(for: self.dynamicType)
-    return bundle.urlForResource("sample", withExtension: "png")!
+    return bundle.url(forResource: "sample", withExtension: "png")!
   }
   
   private var gifImageURL: URL {
     let bundle = Bundle(for: self.dynamicType)
-    return bundle.urlForResource("gifSample", withExtension: "gif")!
+    return bundle.url(forResource: "gifSample", withExtension: "gif")!
   }
   
   private var jpgImageURL: URL {
     let bundle = Bundle(for: self.dynamicType)
-    return bundle.urlForResource("cameraSample", withExtension: "jpg")!
+    return bundle.url(forResource: "cameraSample", withExtension: "jpg")!
   }
   #if !os(OSX)
   private var sampleAnimatedImage: UIImage {
@@ -140,7 +140,7 @@ extension Tests {
   #endif
   
   func makeSavePath(fileExt: String) -> String {
-    return (FileManager.default.urlsForDirectory(.cachesDirectory,
-                                           inDomains: .userDomainMask).first!.path! as NSString!).appendingPathComponent("\(UUID().uuidString).\(fileExt)")
+    return (FileManager.default.urls(for: .cachesDirectory,
+                                     in: .userDomainMask).first!.path as NSString).appendingPathComponent("\(UUID().uuidString).\(fileExt)")
   }
 }
