@@ -80,15 +80,15 @@
     public var imageIOOption: (key: String, value: AnyObject) {
       switch self {
       case .loopCount(let count):
-        return (key: kCGImagePropertyGIFLoopCount as String, value: count)
+        return (key: kCGImagePropertyGIFLoopCount as String, value: count as NSNumber)
       case .delayTime(let delayTime):
-        return (key: kCGImagePropertyGIFDelayTime as String, value: delayTime)
+        return (key: kCGImagePropertyGIFDelayTime as String, value: delayTime as NSNumber)
       case .imageColorMap(let colorMap):
-        return (key: kCGImagePropertyGIFImageColorMap as String, value: colorMap)
+        return (key: kCGImagePropertyGIFImageColorMap as String, value: colorMap as NSData)
       case .hasGlobalColorMap(let flag):
-        return (key: kCGImagePropertyGIFHasGlobalColorMap as String, value: flag)
+        return (key: kCGImagePropertyGIFHasGlobalColorMap as String, value: flag as NSNumber)
       case .unclampedDelayTime(let delay):
-        return (key: kCGImagePropertyGIFUnclampedDelayTime as String, value: delay)
+        return (key: kCGImagePropertyGIFUnclampedDelayTime as String, value: delay as NSNumber)
       }
     }
     

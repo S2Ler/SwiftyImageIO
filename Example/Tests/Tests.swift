@@ -101,7 +101,7 @@ class Tests: XCTestCase {
       let gifMaker = GIF()
       try gifMaker.makeGIF(fromAnimatedImage: sampleAnimatedImage,
                            writeTo: savePath,
-                           gifProperties: [.delayTime(0.1), .loopCount(1)])
+                           properties: [.delayTime(0.1), .loopCount(1)])
       XCTAssert(FileManager.default.fileExists(atPath: savePath))
       let gifSource = ImageSource(data: try! Data(contentsOf: URL(fileURLWithPath: savePath)), options: nil)
       XCTAssert(gifSource!.UTI! == kUTTypeGIF)
@@ -114,23 +114,23 @@ class Tests: XCTestCase {
 }
 
 
-extension Tests {
-  private var pngImageURL: URL {
-    let bundle = Bundle(for: self.dynamicType)
+fileprivate extension Tests {
+  var pngImageURL: URL {
+    let bundle = Bundle(for: type(of: self))
     return bundle.url(forResource: "sample", withExtension: "png")!
   }
   
-  private var gifImageURL: URL {
-    let bundle = Bundle(for: self.dynamicType)
+  var gifImageURL: URL {
+    let bundle = Bundle(for: type(of: self))
     return bundle.url(forResource: "gifSample", withExtension: "gif")!
   }
   
-  private var jpgImageURL: URL {
-    let bundle = Bundle(for: self.dynamicType)
+  var jpgImageURL: URL {
+    let bundle = Bundle(for: type(of: self))
     return bundle.url(forResource: "cameraSample", withExtension: "jpg")!
   }
   #if !os(OSX)
-  private var sampleAnimatedImage: UIImage {
+  var sampleAnimatedImage: UIImage {
     var images = Array<UIImage>()
     for i in 0...10 {
       images.append(UIImage(named: "giphy\(i)", in: Bundle(for: Tests.self), compatibleWith: nil)!)

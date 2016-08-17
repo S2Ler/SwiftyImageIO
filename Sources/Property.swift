@@ -26,7 +26,7 @@ public final class ImageProperties {
       preconditionFailure(".imageProperties should contain at least one property")      
     }
     
-    let imagePropertyKey = anyProperty.dynamicType.key
+    let imagePropertyKey = type(of: anyProperty).key
     self.propertiesKey = imagePropertyKey
     self.rawImageProperties = imageProperties.rawProperties()
   }

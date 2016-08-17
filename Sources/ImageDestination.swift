@@ -37,11 +37,11 @@ extension ImageDestination.Property: Property {
   public var imageIOOption: (key: String, value: AnyObject) {
     switch self {
     case .lossyCompressionQuality(let quality):
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality)
+      return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality as NSNumber)
     case .maximumCompressionQuality:
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 0.0)
+      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 0.0 as NSNumber)
     case .losslessCompressionQuality:
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0)
+      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0 as NSNumber)
     case .backgroundColor(let color):
       return (key: kCGImageDestinationBackgroundColor as String, value: color)
     case .imageProperties(let imageProperties):

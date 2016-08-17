@@ -91,17 +91,17 @@ extension ImageSource.Options: Property {
     case .typeIdentifierHint(let UTI):
       return (key: kCGImageSourceTypeIdentifierHint as String, value: UTI.UTI.cfType)
     case .shouldAllowFloat(let allow):
-      return (key: kCGImageSourceShouldAllowFloat as String, value: allow)
+      return (key: kCGImageSourceShouldAllowFloat as String, value: allow as NSNumber)
     case .shouldCache(let shouldCache):
-      return (key: kCGImageSourceShouldCache as String, value: shouldCache)
+      return (key: kCGImageSourceShouldCache as String, value: shouldCache as NSNumber)
     case .createThumbnailFromImageIfAbsent(let createThumbnail):
-      return (key: kCGImageSourceCreateThumbnailFromImageIfAbsent as String, value: createThumbnail)
+      return (key: kCGImageSourceCreateThumbnailFromImageIfAbsent as String, value: createThumbnail as NSNumber)
     case .createThumbnailFromImageAlways(let createThumbnail):
-      return (key: kCGImageSourceCreateThumbnailFromImageAlways as String, value: createThumbnail)
+      return (key: kCGImageSourceCreateThumbnailFromImageAlways as String, value: createThumbnail as NSNumber)
     case .thumbnailMaxPixelSize(let size):
-      return (key: kCGImageSourceThumbnailMaxPixelSize as String, value: size)
+      return (key: kCGImageSourceThumbnailMaxPixelSize as String, value: size as NSNumber)
     case .createThumbnailWithTransform(let createWithTransform):
-      return (key: kCGImageSourceCreateThumbnailWithTransform as String, value: createWithTransform)
+      return (key: kCGImageSourceCreateThumbnailWithTransform as String, value: createWithTransform as NSNumber)
     }
   }
 }
