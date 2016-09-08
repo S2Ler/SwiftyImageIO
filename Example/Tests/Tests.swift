@@ -66,7 +66,7 @@ class Tests: XCTestCase {
     guard let destination = ImageDestination(data: data, UTI: kUTTypePNG, imageCount: 1)
       else { XCTAssert(false); return }
     #if os(OSX)
-      let image = NSImage(contentsOfFile: pngImageURL.path!)!
+      let image = NSImage(contentsOfFile: pngImageURL.path)!
       var imageRect:CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
       let cgimage = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)!
     #else
