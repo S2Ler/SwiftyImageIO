@@ -35,7 +35,7 @@ public struct UTI {
   }
 }
 
-extension UTI: StringLiteralConvertible {
+extension UTI: ExpressibleByStringLiteral {
   public init(unicodeScalarLiteral value: StringLiteralType) {
     cfType = value as CFString
   }
@@ -85,15 +85,15 @@ extension UTI: Equatable {
 }
 
 public func ==(lhs: UTI, rhs: UTI) -> Bool {
-  return CFStringCompare(lhs.cfType, rhs.cfType, CFStringCompareFlags()) == .CompareEqualTo
+  return CFStringCompare(lhs.cfType, rhs.cfType, CFStringCompareFlags()) == .compareEqualTo
 }
 
 public func ==(lhs: UTI, rhs: UTITypeConvertible) -> Bool {
-  return CFStringCompare(lhs.cfType, rhs.UTI.cfType, CFStringCompareFlags()) == .CompareEqualTo
+  return CFStringCompare(lhs.cfType, rhs.UTI.cfType, CFStringCompareFlags()) == .compareEqualTo
 }
 
 public func ==(lhs: UTITypeConvertible, rhs: UTI) -> Bool {
-  return CFStringCompare(lhs.UTI.cfType, rhs.cfType, CFStringCompareFlags()) == .CompareEqualTo
+  return CFStringCompare(lhs.UTI.cfType, rhs.cfType, CFStringCompareFlags()) == .compareEqualTo
 }
 
 //MARK: - CFArray

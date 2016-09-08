@@ -8,6 +8,7 @@ import SwiftyImageIO
 #if !os(OSX)
   import MobileCoreServices
 #endif
+import Foundation
 
 class Tests: XCTestCase {
   
@@ -44,7 +45,7 @@ class Tests: XCTestCase {
   func testGifImageSource() {
     let imageSource = ImageSource(url: gifImageURL, options: nil)!
     XCTAssert(imageSource.imageCount == 120)
-    XCTAssert(imageSource.status == .StatusComplete)
+    XCTAssert(imageSource.status == .statusComplete)
     for imageIndex in (0..<imageSource.imageCount) {
       XCTAssertNotNil(imageSource.createImage(atIndex: imageIndex, options: nil))
     }
@@ -52,9 +53,9 @@ class Tests: XCTestCase {
   }
   
   func testPngImageSource() {
-    let imageSource = ImageSource(url: pngImageURL, options: [.TypeIdentifierHint(kUTTypePNG)])!
+    let imageSource = ImageSource(url: pngImageURL, options: [.typeIdentifierHint(kUTTypePNG)])!
     XCTAssert(imageSource.imageCount == 1)
-    XCTAssert(imageSource.status == .StatusComplete)
+    XCTAssert(imageSource.status == .statusComplete)
     XCTAssertNotNil(imageSource.createImage())
     XCTAssert(imageSource.UTI! == kUTTypePNG)
   }
@@ -65,19 +66,19 @@ class Tests: XCTestCase {
     guard let destination = ImageDestination(data: data, UTI: kUTTypePNG, imageCount: 1)
       else { XCTAssert(false); return }
     #if os(OSX)
-      let image = NSImage(contentsOfFile: pngImageURL.path!)!
-      var imageRect:CGRect = CGRectMake(0, 0, image.size.width, image.size.height)
-      let cgimage = image.CGImageForProposedRect(&imageRect, context: nil, hints: nil)!
+      let image = NSImage(contentsOfFile: pngImageURL.path)!
+      var imageRect:CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+      let cgimage = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)!
     #else
-      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path!)!.CGImage!
+      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path)!.cgImage!
     #endif
     
     destination.addImage(cgimage)
     XCTAssertTrue(destination.finalize())
     #if os(OSX)
-      let out_image = NSImage(data: data)
+      let out_image = NSImage(data: data as Data)
     #else
-      let out_image = UIImage(data: data)
+      let out_image = UIImage(data: data as Data)
     #endif
     
     XCTAssertNotNil(out_image)
@@ -93,21 +94,53 @@ class Tests: XCTestCase {
     XCTAssert(UTIConvertible == UTIConvertible2)
     XCTAssert(UTIPure == UTIPure2)
   }
+  #if !os(OSX)
+  func testMakeGIF() {
+    let savePath = makeSavePath(fileExt: "gif")
+    do {
+      let gifMaker = GIF()
+      try gifMaker.makeGIF(fromAnimatedImage: sampleAnimatedImage,
+                           writeTo: savePath,
+                           properties: [.delayTime(0.1), .loopCount(1)])
+      XCTAssert(FileManager.default.fileExists(atPath: savePath))
+      let gifSource = ImageSource(data: try! Data(contentsOf: URL(fileURLWithPath: savePath)), options: nil)
+      XCTAssert(gifSource!.UTI! == kUTTypeGIF)
+    }
+    catch {
+      print(error)
+    }
+  }
+  #endif
 }
 
-extension Tests {
-  private var pngImageURL: NSURL {
-    let bundle = NSBundle(forClass: self.dynamicType)
-    return bundle.URLForResource("sample", withExtension: "png")!
+
+fileprivate extension Tests {
+  var pngImageURL: URL {
+    let bundle = Bundle(for: type(of: self))
+    return bundle.url(forResource: "sample", withExtension: "png")!
   }
   
-  private var gifImageURL: NSURL {
-    let bundle = NSBundle(forClass: self.dynamicType)
-    return bundle.URLForResource("gifSample", withExtension: "gif")!
+  var gifImageURL: URL {
+    let bundle = Bundle(for: type(of: self))
+    return bundle.url(forResource: "gifSample", withExtension: "gif")!
   }
   
-  private var jpgImageURL: NSURL {
-    let bundle = NSBundle(forClass: self.dynamicType)
-    return bundle.URLForResource("cameraSample", withExtension: "jpg")!
+  var jpgImageURL: URL {
+    let bundle = Bundle(for: type(of: self))
+    return bundle.url(forResource: "cameraSample", withExtension: "jpg")!
+  }
+  #if !os(OSX)
+  var sampleAnimatedImage: UIImage {
+    var images = Array<UIImage>()
+    for i in 0...10 {
+      images.append(UIImage(named: "giphy\(i)", in: Bundle(for: Tests.self), compatibleWith: nil)!)
+    }
+    return UIImage.animatedImage(with: images, duration: 1)!
+  }
+  #endif
+  
+  func makeSavePath(fileExt: String) -> String {
+    return (FileManager.default.urls(for: .cachesDirectory,
+                                     in: .userDomainMask).first!.path as NSString).appendingPathComponent("\(UUID().uuidString).\(fileExt)")
   }
 }

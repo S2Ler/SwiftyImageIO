@@ -10,12 +10,12 @@ cache:
   - bundler
   - cocoapods
 
-osx_image: xcode7.3
+osx_image: xcode8
 language: objective-c
 xcode_workspace: Example/SwiftyImageIO.xcworkspace
 xcode_scheme: SwiftyImageIO-Example
 podfile: Example/Podfile
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/SwiftyImageIO.xcworkspace -scheme SwiftyImageIO-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+- set -o pipefail && xcodebuild test -workspace Example/SwiftyImageIO.xcworkspace -scheme SwiftyImageIO-Example -destination 'platform=iOS Simulator,name=iPhone 6s' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
+  # - pod lib lint

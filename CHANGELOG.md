@@ -1,3 +1,8 @@
+## 0.3.0
+
+* Swift 3.0
+* Write animated UIImage to GIF 
+
 ## 0.2.0
 
 * Remove Swift 3.0 support

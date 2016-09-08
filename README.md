@@ -24,7 +24,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 import SwiftyImageIO
 
 let source = ImageSource(data: imageData, options: nil)
-let thumbnailCGImage = source?.createThumbnail(size: thumbnailSize)
+let thumbnailCGImage = source?.createThumbnail(maxPixelSize: thumbnailSize)
 ```
 
 ### Write image to disk

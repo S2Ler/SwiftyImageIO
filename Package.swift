@@ -1,5 +1,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftyImageIO"
+    name: "SwiftyImageIO",
+    exclude: ["Sources/GIF.swift"]
+
 )

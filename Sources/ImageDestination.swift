@@ -12,7 +12,7 @@ public final class ImageDestination {
     self.imageDestination = imageDestination
   }
   
-  public init?(url: NSURL, UTI: UTITypeConvertible, imageCount: Int) {
+  public init?(url: URL, UTI: UTITypeConvertible, imageCount: Int) {
     guard let imageDestination = CGImageDestinationCreateWithURL(url as CFURL, UTI.UTI.cfType, imageCount, nil)
       else { return nil }
     self.imageDestination = imageDestination
@@ -25,51 +25,39 @@ public final class ImageDestination {
   }
   
   public enum Property {
-    case LossyCompressionQuality(Double)
-    case MaximumCompressionQuality
-    case LosslessCompressionQuality
-    case BackgroundColor(CGColor)
-    case ImageProperty(key: String, value: AnyObject)
+    case lossyCompressionQuality(Double)
+    case maximumCompressionQuality
+    case losslessCompressionQuality
+    case backgroundColor(CGColor)
+    case imageProperties(ImageProperties)
   }
 }
 
-public extension ImageDestination.Property {
-  public var imageIOProperty: (key: String, value: AnyObject) {
+extension ImageDestination.Property: Property {
+  public var imageIOOption: (key: String, value: AnyObject) {
     switch self {
-    case .LossyCompressionQuality(let quality):
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality)
-    case .MaximumCompressionQuality:
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 0.0)
-    case .LosslessCompressionQuality:
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0)
-    case .BackgroundColor(let color):
+    case .lossyCompressionQuality(let quality):
+      return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality as NSNumber)
+    case .maximumCompressionQuality:
+      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 0.0 as NSNumber)
+    case .losslessCompressionQuality:
+      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0 as NSNumber)
+    case .backgroundColor(let color):
       return (key: kCGImageDestinationBackgroundColor as String, value: color)
-    case .ImageProperty(let key, let value):
-      return (key: key, value: value)
+    case .imageProperties(let imageProperties):
+      
+      return (key: imageProperties.propertiesKey, value: imageProperties.rawProperties())
     }
-  }
-}
-
-
-public extension SequenceType where Generator.Element == ImageDestination.Property {
-  func rawProperties() -> CFDictionary {
-    var dictionary: [String: AnyObject] = [:]
-    for property in self {
-      let (key, value) = property.imageIOProperty
-      dictionary[key] = value
-    }
-    
-    return dictionary as CFDictionary
   }
 }
 
 //MARK: - Adding Images
 public extension ImageDestination {
-  public func addImage(image: CGImage, properties: [Property]? = nil) {
+  public func addImage(_ image: CGImage, properties: [Property]? = nil) {
     CGImageDestinationAddImage(imageDestination, image, properties?.rawProperties())
   }
   
-  public func addImage(fromSource source: ImageSource, sourceImageIndex: Int, properties: [Property]? = nil) {
+  public func addImage(from source: ImageSource, sourceImageIndex: Int, properties: [Property]? = nil) {
     CGImageDestinationAddImageFromSource(imageDestination, source.imageSource, sourceImageIndex, properties?.rawProperties())
   }
 }
@@ -80,7 +68,7 @@ public extension ImageDestination {
     return CGImageDestinationCopyTypeIdentifiers().convertToUTIs()
   }
   
-  public static func supportsUTI(UTI: UTITypeConvertible) -> Bool {
+  public static func supportsUTI(_ UTI: UTITypeConvertible) -> Bool {
     return supportedUTIs().contains(UTI.UTI)
   }
   
@@ -91,7 +79,7 @@ public extension ImageDestination {
 
 //MARK: - Settings Properties
 public extension ImageDestination {
-  public func setProperties(properties: [Property]?) {
+  public func setProperties(_ properties: [Property]?) {
     CGImageDestinationSetProperties(imageDestination, properties?.rawProperties())
   }
 }
