@@ -3,12 +3,6 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
-before_install:
-  - bundle install
-
-cache:
-  - bundler
-  - cocoapods
 
 osx_image: xcode8
 language: objective-c
@@ -17,5 +11,4 @@ xcode_scheme: SwiftyImageIO-Example
 podfile: Example/Podfile
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/SwiftyImageIO.xcworkspace -scheme SwiftyImageIO-Example -destination 'platform=iOS Simulator,name=iPhone 6s' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
-  # - pod lib lint
+- set -o pipefail && xcodebuild test -workspace Example/SwiftyImageIO.xcworkspace -scheme SwiftyImageIO-Example -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7' | xcpretty -c
