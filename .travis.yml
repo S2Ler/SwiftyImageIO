@@ -6,9 +6,6 @@ language: objective-c
 
 osx_image: xcode8
 language: objective-c
-xcode_workspace: Example/SwiftyImageIO.xcworkspace
-xcode_scheme: SwiftyImageIO-Example
-podfile: Example/Podfile
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/SwiftyImageIO.xcworkspace -scheme SwiftyImageIO-Example -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7' | xcpretty -c
+- set -o pipefail && xcodebuild test -scheme 'SwiftyImageIO_iOS' -project 'Xcode/SwiftyImageIO.xcodeproj' -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7' | xcpretty -c
