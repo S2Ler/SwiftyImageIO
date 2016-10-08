@@ -9,3 +9,5 @@ language: objective-c
 
 script:
 - set -o pipefail && xcodebuild test -scheme 'SwiftyImageIO_iOS' -project 'Xcode/SwiftyImageIO.xcodeproj' -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7' | xcpretty -c
+- set -o pipefail && xcodebuild test -scheme 'SwiftyImageIO_macOS' -project 'Xcode/SwiftyImageIO.xcodeproj' -sdk macosx -destination 'platform=macosx' | xcpretty -c
+
