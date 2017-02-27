@@ -1,6 +1,7 @@
 # SwiftyImageIO
 
 [![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)]()
+[![SPM Ready](https://img.shields.io/badge/SPM-ready-orange.svg)](https://swift.org/package-manager/)
 [![Build Status](https://travis-ci.org/diejmon/SwiftyImageIO.svg?branch=master)](https://travis-ci.org/diejmon/SwiftyImageIO)
 [![Version](https://img.shields.io/cocoapods/v/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![License](https://img.shields.io/cocoapods/l/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
@@ -39,15 +40,26 @@ if let imageDestination = ImageDestination(url: saveURL, UTI: kUTTypeJPEG, image
 }
 ```
 
-## Requirements
-
 ## Installation
 
-SwiftyImageIO is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### CocoaPods
 
 ```ruby
 pod "SwiftyImageIO"
+```
+
+### Swift Package Manager
+
+```swift
+dependencies: [
+    .Package(url: "https://github.com/diejmon/SwiftyImageIO.git", majorVersion: 0, minor: 3)
+]
+```
+
+### Carthage 
+
+```ogdl
+github "diejmon/SwiftyImageIO" ~> 0.3
 ```
 
 ## Author
