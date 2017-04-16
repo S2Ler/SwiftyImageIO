@@ -46,7 +46,7 @@ GEM
     fuzzy_match (2.0.4)
     gh_inspector (1.0.2)
     i18n (0.7.0)
-    json (1.8.3)
+    json (1.8.5)
     minitest (5.9.1)
     molinillo (0.5.1)
     nap (1.1.0)
@@ -63,7 +63,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods (> 1.1.0.beta)
+  cocoapods
 
 BUNDLED WITH
-   1.13.1
+   1.14.6
