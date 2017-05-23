@@ -1,12 +1,4 @@
-//
-//  GIF.swift
-//  SwiftyImageIO
-//
-//  Created by Alexander Belyavskiy on 6/21/16.
-//  Copyright © 2016 Alexander Belyavskiy. All rights reserved.
-//
-
-#if !os(OSX)
+#if canImport(UIKit)
   import Foundation
   import UIKit
   import MobileCoreServices
@@ -25,21 +17,36 @@
       case imageIOError
     }
     
-    public enum Property {
-      case loopCount(Int)
-      case delayTime(TimeInterval)
-      case imageColorMap(Data)//TODO: Wrap color maps
-      case hasGlobalColorMap(Bool)
-      case unclampedDelayTime(TimeInterval)
+    public struct FrameProperties {
+      var delayTime: TimeInterval?
+      var imageColorMap: Data? // TODO: Wrap color maps
+      var unclampedDelayTime: TimeInterval?
+
+      public init(delayTime: TimeInterval? = nil, imageColorMap: Data? = nil, unclampedDelayTime: TimeInterval? = nil) {
+        self.delayTime = delayTime
+        self.imageColorMap = imageColorMap
+        self.unclampedDelayTime = unclampedDelayTime
+      }
     }
-    
+
+    public struct Properties {
+      var loopCount: Int?
+      var hasGlobalColorMap: Bool?
+
+      public init(loopCount: Int? = nil, hasGlobalColorMap: Bool? = nil) {
+        self.loopCount = loopCount
+        self.hasGlobalColorMap = hasGlobalColorMap
+      }
+    }
+
     public init() {
       
     }
     
     public func makeGIF(fromAnimatedImage animatedImage: UIImage,
                         writeTo path: String,
-                        properties: [GIF.Property]? = nil) throws {
+                        properties: Properties? = nil,
+                        frameProperties: FrameProperties? = nil) throws {
       guard let images = animatedImage.images else {
         throw MakeError.notAnimatedImage
       }
@@ -50,22 +57,24 @@
         else {
           throw MakeError.invalidPath
       }
-      
-      let frameProperties: [ImageDestination.Property]?
-      
+
+
       if let properties = properties {
-        imageDestination.setProperties([.imageProperties(ImageProperties(properties))])
-        frameProperties = [.imageProperties(ImageProperties(properties.gifFrameProperties()))]
-      }
-      else {
-        frameProperties = nil
+        var imageDestinationProperties = ImageDestination.Properties()
+        imageDestinationProperties.imageProperties = [properties]
+        imageDestination.setProperties(imageDestinationProperties)
       }
       
       for image in images {
         guard let cgImage = image.cgImage else {
           throw MakeError.invalidImage
         }
-        imageDestination.addImage(cgImage, properties: frameProperties)
+        var frameImageDestinationProperties = ImageDestination.Properties()
+        if let frameProperties = frameProperties {
+          frameImageDestinationProperties.imageProperties = [frameProperties]
+        }
+
+        imageDestination.addImage(cgImage, properties: frameImageDestinationProperties)
       }
       
       let gifSaved = imageDestination.finalize()
@@ -75,50 +84,49 @@
       }
     }    
   }
-  
-  extension GIF.Property: ImageProperty {
-    public var imageIOOption: (key: String, value: AnyObject) {
-      switch self {
-      case .loopCount(let count):
-        return (key: kCGImagePropertyGIFLoopCount as String, value: count as NSNumber)
-      case .delayTime(let delayTime):
-        return (key: kCGImagePropertyGIFDelayTime as String, value: delayTime as NSNumber)
-      case .imageColorMap(let colorMap):
-        return (key: kCGImagePropertyGIFImageColorMap as String, value: colorMap as NSData)
-      case .hasGlobalColorMap(let flag):
-        return (key: kCGImagePropertyGIFHasGlobalColorMap as String, value: flag as NSNumber)
-      case .unclampedDelayTime(let delay):
-        return (key: kCGImagePropertyGIFUnclampedDelayTime as String, value: delay as NSNumber)
+
+  extension GIF.Properties: ImageProperties {
+    public static var imageIOKey: CFString {
+      return kCGImagePropertyGIFDictionary
+    }
+
+    public var cfValues: CFValues {
+      return [
+        kCGImagePropertyGIFLoopCount: loopCount,
+        kCGImagePropertyGIFHasGlobalColorMap: hasGlobalColorMap,
+      ]
+    }
+
+    public init(_ cfValues: RawCFValues) {
+      if let loopCount = cfValues[kCGImagePropertyGIFLoopCount] as? NSNumber {
+        self.loopCount = loopCount.intValue
+      }
+      if let hasGlobalColorMap = cfValues[kCGImagePropertyGIFHasGlobalColorMap] as? NSNumber {
+        self.hasGlobalColorMap = hasGlobalColorMap.boolValue
       }
     }
-    
-    static public var key: String {
-      return kCGImagePropertyGIFDictionary as String
+
+  }
+
+extension GIF.FrameProperties: ImageProperties {
+  public static var imageIOKey: CFString {
+    return kCGImagePropertyGIFDictionary
+  }
+
+  public var cfValues: CFValues {
+    return [
+      kCGImagePropertyGIFDelayTime: delayTime,
+      kCGImagePropertyGIFImageColorMap: imageColorMap,
+      kCGImagePropertyGIFUnclampedDelayTime: unclampedDelayTime,
+    ]
+  }
+
+  public init(_ cfValues: RawCFValues) {
+    if let delayTime = cfValues[kCGImagePropertyGIFDelayTime] as? NSNumber {
+      self.delayTime = delayTime.doubleValue
     }
   }
-  
-  public extension GIF.Property {
-    var isFileScopeProperty: Bool {
-      switch self {
-      case .loopCount:
-        fallthrough
-      case .hasGlobalColorMap:
-        return true
-      default:
-        return false
-      }
-    }
-  }
-  
-  private extension Sequence where Iterator.Element == GIF.Property {
-    func gifFileProperties() -> [Iterator.Element] {
-      return self.filter { $0.isFileScopeProperty }
-    }
-    
-    func gifFrameProperties() -> [Iterator.Element] {
-      return self.filter { !$0.isFileScopeProperty }
-    }
-  }
-  
-  
+
+}
+
 #endif

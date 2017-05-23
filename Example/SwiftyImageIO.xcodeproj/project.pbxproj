@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		09B3513D1CA8419E00B1A19A /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B3513C1CA8419E00B1A19A /* sample.png */; };
 		09B3513F1CA84DC700B1A19A /* gifSample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 09B3513E1CA84DC700B1A19A /* gifSample.gif */; };
+		09B646EE22A257710054F931 /* image_with_gps_data.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09B646ED22A257710054F931 /* image_with_gps_data.jpg */; };
+		09B646FB22A2577D0054F931 /* giphy3.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F022A2577D0054F931 /* giphy3.png */; };
+		09B646FC22A2577D0054F931 /* giphy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F122A2577D0054F931 /* giphy2.png */; };
+		09B646FD22A2577D0054F931 /* giphy0.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F222A2577D0054F931 /* giphy0.png */; };
+		09B646FE22A2577D0054F931 /* giphy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F322A2577D0054F931 /* giphy1.png */; };
+		09B646FF22A2577D0054F931 /* giphy5.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F422A2577D0054F931 /* giphy5.png */; };
+		09B6470022A2577D0054F931 /* giphy4.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F522A2577D0054F931 /* giphy4.png */; };
+		09B6470122A2577D0054F931 /* giphy6.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F622A2577D0054F931 /* giphy6.png */; };
+		09B6470222A2577D0054F931 /* giphy7.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F722A2577D0054F931 /* giphy7.png */; };
+		09B6470322A2577D0054F931 /* giphy10.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F822A2577D0054F931 /* giphy10.png */; };
+		09B6470422A2577D0054F931 /* giphy9.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646F922A2577D0054F931 /* giphy9.png */; };
+		09B6470522A2577D0054F931 /* giphy8.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B646FA22A2577D0054F931 /* giphy8.png */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -31,8 +43,20 @@
 
 /* Begin PBXFileReference section */
 		06CCE90BA9094A2CA52C520B /* Pods-SwiftyImageIO_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example.release.xcconfig"; sourceTree = "<group>"; };
-		09B3513C1CA8419E00B1A19A /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
-		09B3513E1CA84DC700B1A19A /* gifSample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifSample.gif; sourceTree = "<group>"; };
+		09B3513C1CA8419E00B1A19A /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ../../Xcode/Resources/sample.png; sourceTree = "<group>"; };
+		09B3513E1CA84DC700B1A19A /* gifSample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gifSample.gif; path = ../../Xcode/Resources/gifSample.gif; sourceTree = "<group>"; };
+		09B646ED22A257710054F931 /* image_with_gps_data.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image_with_gps_data.jpg; path = ../../Xcode/Resources/image_with_gps_data.jpg; sourceTree = "<group>"; };
+		09B646F022A2577D0054F931 /* giphy3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy3.png; sourceTree = "<group>"; };
+		09B646F122A2577D0054F931 /* giphy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy2.png; sourceTree = "<group>"; };
+		09B646F222A2577D0054F931 /* giphy0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy0.png; sourceTree = "<group>"; };
+		09B646F322A2577D0054F931 /* giphy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy1.png; sourceTree = "<group>"; };
+		09B646F422A2577D0054F931 /* giphy5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy5.png; sourceTree = "<group>"; };
+		09B646F522A2577D0054F931 /* giphy4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy4.png; sourceTree = "<group>"; };
+		09B646F622A2577D0054F931 /* giphy6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy6.png; sourceTree = "<group>"; };
+		09B646F722A2577D0054F931 /* giphy7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy7.png; sourceTree = "<group>"; };
+		09B646F822A2577D0054F931 /* giphy10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy10.png; sourceTree = "<group>"; };
+		09B646F922A2577D0054F931 /* giphy9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy9.png; sourceTree = "<group>"; };
+		09B646FA22A2577D0054F931 /* giphy8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy8.png; sourceTree = "<group>"; };
 		211798F6E539096DCDC6C79E /* Pods-SwiftyImageIO_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C6B8F4B678EC938F404E656 /* Pods-SwiftyImageIO_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftyImageIO_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyImageIO_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +69,7 @@
 		607FACE51AFB9204008FA782 /* SwiftyImageIO_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyImageIO_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		83A8188CE3F83F5AAE8BCF64 /* SwiftyImageIO.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyImageIO.podspec; path = ../SwiftyImageIO.podspec; sourceTree = "<group>"; };
+		83A8188CE3F83F5AAE8BCF64 /* SwiftyImageIO.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyImageIO.podspec; path = ../SwiftyImageIO.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0B466129433F27FA2E43B31 /* Pods-SwiftyImageIO_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyImageIO_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CA39DA770B0AF4CFF7904173 /* Pods_SwiftyImageIO_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyImageIO_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11AF8646AF5061B7FF4C556 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -73,6 +97,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09B646EF22A2577D0054F931 /* animatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				09B646F022A2577D0054F931 /* giphy3.png */,
+				09B646F122A2577D0054F931 /* giphy2.png */,
+				09B646F222A2577D0054F931 /* giphy0.png */,
+				09B646F322A2577D0054F931 /* giphy1.png */,
+				09B646F422A2577D0054F931 /* giphy5.png */,
+				09B646F522A2577D0054F931 /* giphy4.png */,
+				09B646F622A2577D0054F931 /* giphy6.png */,
+				09B646F722A2577D0054F931 /* giphy7.png */,
+				09B646F822A2577D0054F931 /* giphy10.png */,
+				09B646F922A2577D0054F931 /* giphy9.png */,
+				09B646FA22A2577D0054F931 /* giphy8.png */,
+			);
+			name = animatedImage;
+			path = ../../Xcode/Resources/animatedImage;
+			sourceTree = "<group>";
+		};
 		218228833D29C369DA7AC9B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +173,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				09B646EF22A2577D0054F931 /* animatedImage */,
+				09B646ED22A257710054F931 /* image_with_gps_data.jpg */,
 				09B3513C1CA8419E00B1A19A /* sample.png */,
 				09B3513E1CA84DC700B1A19A /* gifSample.gif */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
@@ -177,7 +222,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				FAD3B19BE426BDE318736537 /* [CP] Embed Pods Frameworks */,
-				CD28CE2230DC318C378602B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,7 +241,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				AE63CFAFFFAD42C932D824C0 /* [CP] Embed Pods Frameworks */,
-				B01B9BACD824F6150D342B74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,7 +259,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -232,7 +275,7 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "SwiftyImageIO" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -264,8 +307,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B6470322A2577D0054F931 /* giphy10.png in Resources */,
+				09B646FD22A2577D0054F931 /* giphy0.png in Resources */,
 				09B3513D1CA8419E00B1A19A /* sample.png in Resources */,
+				09B6470022A2577D0054F931 /* giphy4.png in Resources */,
+				09B6470522A2577D0054F931 /* giphy8.png in Resources */,
+				09B646FC22A2577D0054F931 /* giphy2.png in Resources */,
+				09B646FF22A2577D0054F931 /* giphy5.png in Resources */,
+				09B6470422A2577D0054F931 /* giphy9.png in Resources */,
+				09B646FB22A2577D0054F931 /* giphy3.png in Resources */,
+				09B6470122A2577D0054F931 /* giphy6.png in Resources */,
+				09B646FE22A2577D0054F931 /* giphy1.png in Resources */,
+				09B6470222A2577D0054F931 /* giphy7.png in Resources */,
 				09B3513F1CA84DC700B1A19A /* gifSample.gif in Resources */,
+				09B646EE22A257710054F931 /* image_with_gps_data.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,13 +333,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyImageIO_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		852E0838083F02C696BB23B5 /* [CP] Check Pods Manifest.lock */ = {
@@ -293,13 +351,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyImageIO_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AE63CFAFFFAD42C932D824C0 /* [CP] Embed Pods Frameworks */ = {
@@ -308,43 +369,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyImageIO/SwiftyImageIO.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyImageIO.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B01B9BACD824F6150D342B74 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD28CE2230DC318C378602B1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftyImageIO_Tests/Pods-SwiftyImageIO_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FAD3B19BE426BDE318736537 /* [CP] Embed Pods Frameworks */ = {
@@ -353,13 +387,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyImageIO/SwiftyImageIO.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyImageIO.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftyImageIO_Example/Pods-SwiftyImageIO_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -420,13 +457,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -449,11 +496,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -465,13 +513,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -487,9 +545,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -501,11 +560,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftyImageIO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flipdrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -516,12 +575,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftyImageIO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flipdrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -540,7 +599,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyImageIO_Example.app/SwiftyImageIO_Example";
 			};
 			name = Debug;
@@ -557,7 +615,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyImageIO_Example.app/SwiftyImageIO_Example";
 			};
 			name = Release;

@@ -18,76 +18,68 @@ public final class ImageDestination {
     self.imageDestination = imageDestination
   }
 
-  public init?(dataConsumer: CGDataConsumer, imageType: UTITypeConvertible, imageCount: Int, options: [Property]? = nil) {
-    guard let imageDestination = CGImageDestinationCreateWithDataConsumer(dataConsumer, imageType.UTI.cfType, imageCount, options?.rawProperties())
+  public init?(dataConsumer: CGDataConsumer, imageType: UTITypeConvertible, imageCount: Int, options: Properties? = nil) {
+    guard let imageDestination = CGImageDestinationCreateWithDataConsumer(dataConsumer, imageType.UTI.cfType, imageCount, options?.rawCFValues())
       else { return nil }
     self.imageDestination = imageDestination
   }
   
-  public enum Property {
-    case lossyCompressionQuality(Double)
-    case maximumCompressionQuality
-    case losslessCompressionQuality
-    case backgroundColor(CGColor)
-    case imageProperties(ImageProperties)
+  public struct Properties {
+    public init() {}
+    public var lossyCompressionQuality: Double?
+    public var backgroundColor: CGColor?
+    public var imageProperties: [ImageProperties]?
   }
 }
 
-extension ImageDestination.Property: Property {
-  public var imageIOOption: (key: String, value: AnyObject) {
-    switch self {
-    case .lossyCompressionQuality(let quality):
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: quality as NSNumber)
-    case .maximumCompressionQuality:
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 0.0 as NSNumber)
-    case .losslessCompressionQuality:
-      return (key: kCGImageDestinationLossyCompressionQuality as String, value: 1.0 as NSNumber)
-    case .backgroundColor(let color):
-      return (key: kCGImageDestinationBackgroundColor as String, value: color)
-    case .imageProperties(let imageProperties):
-      
-      return (key: imageProperties.propertiesKey, value: imageProperties.rawProperties())
-    }
-  }
-}
-
-//MARK: - Adding Images
+// MARK: - Adding Images
 public extension ImageDestination {
-  public func addImage(_ image: CGImage, properties: [Property]? = nil) {
-    CGImageDestinationAddImage(imageDestination, image, properties?.rawProperties())
+  func addImage(_ image: CGImage, properties: Properties? = nil) {
+    CGImageDestinationAddImage(imageDestination, image, properties?.rawCFValues())
   }
   
-  public func addImage(from source: ImageSource, sourceImageIndex: Int, properties: [Property]? = nil) {
-    CGImageDestinationAddImageFromSource(imageDestination, source.imageSource, sourceImageIndex, properties?.rawProperties())
+  func addImage(from source: ImageSource, sourceImageIndex: Int, properties: Properties? = nil) {
+    CGImageDestinationAddImageFromSource(imageDestination, source.imageSource, sourceImageIndex, properties?.rawCFValues())
   }
 }
 
-//MARK: - Getting Type Identifiers
+// MARK: - Getting Type Identifiers
 public extension ImageDestination {
-  public static func supportedUTIs() -> [SwiftyImageIO.UTI] {
+  static func supportedUTIs() -> [SwiftyImageIO.UTI] {
     return CGImageDestinationCopyTypeIdentifiers().convertToUTIs()
   }
   
-  public static func supportsUTI(_ UTI: UTITypeConvertible) -> Bool {
+  static func supportsUTI(_ UTI: UTITypeConvertible) -> Bool {
     return supportedUTIs().contains(UTI.UTI)
   }
   
-  public static var typeID: CFTypeID {
+  static var typeID: CFTypeID {
     return CGImageDestinationGetTypeID()
   }
 }
 
-//MARK: - Settings Properties
+// MARK: - Settings Properties
 public extension ImageDestination {
-  public func setProperties(_ properties: [Property]?) {
-    CGImageDestinationSetProperties(imageDestination, properties?.rawProperties())
+  func setProperties(_ properties: Properties?) {
+    CGImageDestinationSetProperties(imageDestination, properties?.rawCFValues())
   }
 }
 
-//MARK: - Finalizing an Image Destination
+// MARK: - Finalizing an Image Destination
 public extension ImageDestination {
-  public func finalize() -> Bool {
+  func finalize() -> Bool {
     return CGImageDestinationFinalize(imageDestination)
+  }
+}
+
+extension ImageDestination.Properties: CFValuesRepresentable {
+  public var cfValues: CFValues {
+    var result: CFValues = [
+      kCGImageDestinationLossyCompressionQuality: lossyCompressionQuality,
+      kCGImageDestinationBackgroundColor: backgroundColor,
+    ]
+    imageProperties?.merge(into: &result)
+    return result
   }
 }
 

@@ -1,3 +1,10 @@
+## 0.4.0 (Breaking release)
+* Swift 5.1
+* > iOS 13, macOS > 10.15
+* Limited support for older release will be added in the future (PRs are welcome)
+* Rewritten Options abstraction
+* Added a way to write/read EXIF and similar properties (WIP, PRs are welcome)
+
 ## 0.3.0
 
 * Swift 3.0
