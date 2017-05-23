@@ -39,7 +39,7 @@
     
     public func makeGIF(fromAnimatedImage animatedImage: UIImage,
                         writeTo path: String,
-                        properties: [GIF.Property]? = nil) throws {
+                        properties: ImageProperties<GIF.Property>? = nil) throws {
       guard let images = animatedImage.images else {
         throw MakeError.notAnimatedImage
       }
@@ -54,8 +54,8 @@
       let frameProperties: [ImageDestination.Property]?
       
       if let properties = properties {
-        imageDestination.setProperties([.imageProperties(ImageProperties(properties))])
-        frameProperties = [.imageProperties(ImageProperties(properties.gifFrameProperties()))]
+        imageDestination.setProperties([.imageProperties(properties.anyImageProperties)])
+        frameProperties = [.imageProperties(properties.gifFrameProperties().anyImageProperties)]
       }
       else {
         frameProperties = nil
@@ -77,6 +77,37 @@
   }
   
   extension GIF.Property: ImageProperty {
+    public init?(imageIOKey: String, value: AnyObject) {
+      switch imageIOKey as CFString {
+      case kCGImagePropertyGIFLoopCount:
+        guard let value = value as? NSNumber else {
+          return nil
+        }
+        self = .loopCount(value.intValue)
+      case kCGImagePropertyGIFDelayTime:
+        guard let value = value as? NSNumber else {
+          return nil
+        }
+        self = .delayTime(value.doubleValue)
+      case kCGImagePropertyGIFImageColorMap:
+        guard let value = value as? NSData else {
+          return nil
+        }
+        self = .imageColorMap(value as Data)
+      case kCGImagePropertyGIFHasGlobalColorMap:
+        guard let value = value as? NSNumber else {
+          return nil
+        }
+        self = .hasGlobalColorMap(value.boolValue)
+      case kCGImagePropertyGIFUnclampedDelayTime:
+        guard let value = value as? NSNumber else {
+          return nil
+        }
+        self = .unclampedDelayTime(value.doubleValue)
+      default:
+        return nil
+      }
+    }
     public var imageIOOption: (key: String, value: AnyObject) {
       switch self {
       case .loopCount(let count):
@@ -110,15 +141,14 @@
     }
   }
   
-  private extension Sequence where Iterator.Element == GIF.Property {
-    func gifFileProperties() -> [Iterator.Element] {
-      return self.filter { $0.isFileScopeProperty }
+  private extension ImageProperties where PropertyType == GIF.Property {
+    func gifFileProperties() -> ImageProperties<PropertyType> {
+      return ImageProperties(self.filter({ $0.isFileScopeProperty }))
     }
     
-    func gifFrameProperties() -> [Iterator.Element] {
-      return self.filter { !$0.isFileScopeProperty }
+    func gifFrameProperties() -> ImageProperties<PropertyType> {
+      return ImageProperties(self.filter({ !$0.isFileScopeProperty }))
     }
   }
-  
   
 #endif

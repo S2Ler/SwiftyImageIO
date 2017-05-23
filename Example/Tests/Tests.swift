@@ -63,8 +63,11 @@ class Tests: XCTestCase {
   func testImageDestination() {
     let data = NSMutableData()
 
-    guard let destination = ImageDestination(data: data, UTI: kUTTypePNG, imageCount: 1)
-      else { XCTAssert(false); return }
+    guard let destination = ImageDestination(data: data, UTI: kUTTypePNG, imageCount: 1) else {
+      XCTAssert(false);
+      return
+    }
+    
     #if os(OSX)
       let image = NSImage(contentsOfFile: pngImageURL.path)!
       var imageRect:CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
@@ -94,6 +97,47 @@ class Tests: XCTestCase {
     XCTAssert(UTIConvertible == UTIConvertible2)
     XCTAssert(UTIPure == UTIPure2)
   }
+  
+  func testEXIF() {
+    let data = NSMutableData()
+    
+    guard let destination = ImageDestination(data: data, UTI: kUTTypeJPEG, imageCount: 1) else {
+      XCTAssert(false);
+      return
+    }
+    
+    #if os(OSX)
+      let image = NSImage(contentsOfFile: pngImageURL.path)!
+      var imageRect:CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+      let cgimage = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)!
+    #else
+      let cgimage: CGImage = UIImage(contentsOfFile: pngImageURL.path)!.cgImage!
+    #endif
+    let exposureTime = TimeInterval(10)
+    let imageProperties = ImageProperties([
+      EXIFImageProperty.exposureTime(exposureTime),
+      ])
+    destination.addImage(cgimage, properties: [.imageProperties(imageProperties.anyImageProperties)])
+    XCTAssertTrue(destination.finalize())
+    
+    var url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+    url.appendPathComponent("tmp.jpeg")
+    try! data.write(to: url, options: NSData.WritingOptions.atomic)
+    
+    let source = ImageSource(data: data as Data, options: nil)
+    guard let properties = source?.propertiesForImage() else {
+      XCTAssert(false, "We created image with properties.");
+      return
+    }
+    
+    guard let extractedImageProperties = ImageProperties<EXIFImageProperty>(properties) else {
+      XCTAssert(false)
+      return
+    }
+    
+
+  }
+  
   #if !os(OSX)
   func testMakeGIF() {
     let savePath = makeSavePath(fileExt: "gif")
@@ -101,7 +145,7 @@ class Tests: XCTestCase {
       let gifMaker = GIF()
       try gifMaker.makeGIF(fromAnimatedImage: sampleAnimatedImage,
                            writeTo: savePath,
-                           properties: [.delayTime(0.1), .loopCount(1)])
+                           properties: ImageProperties([.delayTime(0.1), .loopCount(1)]))
       XCTAssert(FileManager.default.fileExists(atPath: savePath))
       let gifSource = ImageSource(data: try! Data(contentsOf: URL(fileURLWithPath: savePath)), options: nil)
       XCTAssert(gifSource!.UTI! == kUTTypeGIF)

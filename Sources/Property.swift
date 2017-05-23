@@ -15,13 +15,15 @@ public protocol Property {
 
 public protocol ImageProperty: Property {
   static var key: String { get }
+  
+  init?(imageIOKey: String, value: AnyObject)
 }
 
-public final class ImageProperties {
+public final class AnyImageProperties {
   private let rawImageProperties: CFDictionary
   public let propertiesKey: String
   
-  public init<PropertyType: ImageProperty>(_ imageProperties: [PropertyType]) {
+  fileprivate init<PropertyType: ImageProperty>(_ imageProperties: [PropertyType]) {
     guard let anyProperty = imageProperties.first else {
       preconditionFailure(".imageProperties should contain at least one property")      
     }
@@ -30,9 +32,66 @@ public final class ImageProperties {
     self.propertiesKey = imagePropertyKey
     self.rawImageProperties = imageProperties.rawProperties()
   }
-  
+
   public func rawProperties() -> CFDictionary {
     return rawImageProperties
+  }
+}
+
+public struct ImageProperties<PropertyType: ImageProperty> {
+  fileprivate var imageProperties: [PropertyType]
+  
+  public init(_ imageProperties: [PropertyType]) {
+    self.imageProperties = imageProperties
+  }
+  
+  public init?(_ rawImageProperties: [String: AnyObject]) {
+    guard let innerRawProperties = rawImageProperties[PropertyType.key] as? [String: AnyObject] else {
+      return nil
+    }
+    
+    var imageProperties: [PropertyType] = []
+    for (key, value) in innerRawProperties {
+      guard let imageProperty = PropertyType(imageIOKey: key, value: value) else {
+        continue
+      }
+      
+      imageProperties.append(imageProperty)
+    }
+    
+    self.init(imageProperties)
+  }
+
+  public init?(_ anyImageProperties: AnyImageProperties) {
+    guard PropertyType.key == anyImageProperties.propertiesKey else {
+      return nil
+    }
+
+    var imageProperties: [PropertyType] = []
+    let rawImageProperties = anyImageProperties.rawProperties() as! Dictionary<String, AnyObject>
+    for (key, value) in rawImageProperties {
+      guard let imageProperty = PropertyType(imageIOKey: key, value: value) else {
+        continue
+      }
+
+      imageProperties.append(imageProperty)
+    }
+
+    self.init(imageProperties)
+  }
+
+  public var anyImageProperties: AnyImageProperties {
+    return AnyImageProperties(imageProperties)
+  }
+
+  public mutating func append(_ property: PropertyType) {
+    imageProperties.append(property)
+  }
+}
+
+extension ImageProperties: Sequence {
+  public func makeIterator() -> IndexingIterator<[PropertyType]> {
+    return imageProperties.makeIterator()
   }
 }
 
@@ -54,4 +113,8 @@ public extension Sequence where Iterator.Element: ImageProperty {
     let outterProperties: [String: CFDictionary] = [Iterator.Element.key: innerProperties]
     return outterProperties as CFDictionary
   }
+}
+
+public func ~=(lhs: CFString, rhs: CFString) -> Bool {
+  return (lhs as String) == (rhs as String)
 }
