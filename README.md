@@ -1,14 +1,11 @@
 # SwiftyImageIO
 
-[![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)]()
+[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)]()
 [![SPM Ready](https://img.shields.io/badge/SPM-ready-orange.svg)](https://swift.org/package-manager/)
-[![Build Status](https://travis-ci.org/diejmon/SwiftyImageIO.svg?branch=master)](https://travis-ci.org/diejmon/SwiftyImageIO)
 [![Version](https://img.shields.io/cocoapods/v/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![License](https://img.shields.io/cocoapods/l/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyImageIO.svg?style=flat)](http://cocoapods.org/pods/SwiftyImageIO)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![codebeat badge](https://codebeat.co/badges/e67c5860-b3fd-4c7a-b825-cd698f13a3ad)](https://codebeat.co/projects/github-com-diejmon-swiftyimageio)
-
 
 Swift wrapper around ImageIO framework.
 
@@ -40,6 +37,34 @@ if let imageDestination = ImageDestination(url: saveURL, UTI: kUTTypeJPEG, image
 }
 ```
 
+### Create GIF from animated UIImage
+
+```swift
+let gifMaker = GIF()
+try gifMaker.makeGIF(fromAnimatedImage: animatedImage,
+                     writeTo: savePath,
+                     properties: GIF.Properties(loopCount: 1),
+                     frameProperties: GIF.FrameProperties(delayTime: 0.1))
+```
+
+### Read GPS image properties
+
+```swift
+let source = ImageSource(url: jpgWithExifImageURL, options: nil)
+guard let properties = source?.propertiesForImage() else {
+  XCTFail("We created image without properties.");
+  return
+}
+guard let gpsProperties = properties.get(GPSImageProperties.self) else {
+  XCTFail("GPS Not available")
+  return
+}
+```
+
+### Test examples
+
+[Test Examples](Example/Tests/Tests.swift)
+
 ## Installation
 
 ### CocoaPods
@@ -52,15 +77,19 @@ pod "SwiftyImageIO"
 
 ```swift
 dependencies: [
-    .Package(url: "https://github.com/diejmon/SwiftyImageIO.git", majorVersion: 0, minor: 3)
+    .Package(url: "https://github.com/diejmon/SwiftyImageIO.git", majorVersion: 0, minor: 4)
 ]
 ```
 
 ### Carthage 
 
 ```ogdl
-github "diejmon/SwiftyImageIO" ~> 0.3
+github "diejmon/SwiftyImageIO" ~> 0.4
 ```
+
+### EXIF
+
+The list of exif values can be found in this [document](https://www.exif.org/Exif2-2.PDF)
 
 ## Author
 

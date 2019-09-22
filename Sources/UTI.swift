@@ -1,18 +1,10 @@
-//
-//  UTI.swift
-//  SwiftyImageIO
-//
-//  Created by Alexander Belyavskiy on 5/21/16.
-//  Copyright © 2016 Alexander Belyavskiy. All rights reserved.
-//
-
 import Foundation
 import ImageIO
-#if !os(OSX)
+#if canImport(MobileCoreServices)
   import MobileCoreServices
 #endif
 
-//MARK: - UTI
+// MARK: - UTI
 public struct UTI {
   public let cfType: CFString
   
@@ -49,9 +41,15 @@ extension UTI: ExpressibleByStringLiteral {
   }
 }
 
-//MARK: - UTITypeConvertible
-public protocol UTITypeConvertible {
+// MARK: - UTITypeConvertible
+public protocol UTITypeConvertible: CFValueConvertible {
   var UTI: SwiftyImageIO.UTI { get }
+}
+
+public extension UTITypeConvertible {
+  var cfValue: AnyObject {
+    return UTI.cfType
+  }
 }
 
 extension CFString: UTITypeConvertible {
@@ -72,14 +70,15 @@ extension UTI: UTITypeConvertible {
   }
 }
 
-//MARK: - Hashable
+// MARK: - Hashable
 extension UTI: Hashable {
-  public var hashValue: Int {
-    return Int(CFHash(cfType))
+
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(CFHash(cfType))
   }
 }
 
-//MARK: - Equatable
+// MARK: - Equatable
 extension UTI: Equatable {
   
 }
@@ -96,7 +95,7 @@ public func ==(lhs: UTITypeConvertible, rhs: UTI) -> Bool {
   return CFStringCompare(lhs.UTI.cfType, rhs.cfType, CFStringCompareFlags()) == .compareEqualTo
 }
 
-//MARK: - CFArray
+// MARK: - CFArray
 extension CFArray {
   func convertToUTIs() -> [UTI] {
     if let identifiers = CGImageDestinationCopyTypeIdentifiers() as [AnyObject] as? [CFString] {
